@@ -9,10 +9,10 @@ This repo is meant as a **playground for practice and exploration** while learni
 - **Backend** → .NET / C#, Azure services, REST APIs  
 - **Frontend** → HTML, CSS, JavaScript (and frameworks/libraries as explored) 
 
-Install dependencies
+##Install dependencies
 
-AI projects → Python environment (requirements.txt if present)
+**AI projects** → Python environment (requirements.txt if present)
 
-Backend projects → .NET SDK
+**Backend projects** → .NET SDK
 
-Frontend projects → Node.js / npm
+**Frontend projects** → Node.js / npm
