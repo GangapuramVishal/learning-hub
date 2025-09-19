@@ -1,0 +1,33 @@
+# ---- Visual Studio / .NET ----
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+bin/
+obj/
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# ---- Jupyter Notebooks ----
+.ipynb_checkpoints/
+
+# ---- Node / Frontend ----
+node_modules/
+dist/
+build/
+
+# ---- IDE configs ----
+.vscode/
+.idea/
+
+# ---- OS files ----
+Thumbs.db
+.DS_Store
+
+# ---- Environment files ----
+.env
