@@ -1,0 +1,65 @@
+﻿1. **Event Handler**: An event handler is a method that gets executed in response to an event being raised. 
+	It's the code that reacts to the occurrence of the event. In the context of GUI applications, for example,
+	a button click event handler would contain the code that executes when a user clicks a button.
+	
+2. **Event Raiser**: An event raiser is the code that triggers or raises an event. When something 
+	happens that should notify other parts of the program about it, the event raiser triggers the event, 
+	causing any registered event handlers to execute.
+
+3. **Delegates**: A delegate is a type that represents references to methods with a particular parameter 
+	list and return type. Delegates are used to create callbacks or to pass methods as arguments to other methods. 
+	They're especially useful for implementing events because they allow you to subscribe multiple event handlers to the same event.
+
+4. **Event Args (Event Arguments)**: Event Args are objects that contain information about an event. They are passed as parameters
+	to event handlers, providing details about the event that occurred. For example, in a button click event,
+	event args might contain information about which button was clicked.
+
+In summary, when you have an event in your code:
+- You define an event handler, which is the method that reacts to the event.
+- You have an event raiser, which is the code that triggers the event.
+- You use delegates to handle the subscription and invocation of event handlers.
+- You may use event args to pass additional information about the event to the event handlers.
+ 
+ 
+ 
+ Points to Remember :
+> An event is a wrapper around a delegate. It depends on the delegate.
+> Use "event" keyword with delegate type variable to declare an event.
+> Use built-in delegate EventHandler or EventHandler<TEventArgs> for common events.
+> The publisher class raises an event, and the subscriber class registers for an event and provides the event-handler method.
+> Name the method which raises an event prefixed with "On" with the event name.
+> The signature of the handler method must match the delegate signature.
+> Register with an event using the += operator. Unsubscribe it using the -= operator. Cannot use the = operator.
+> Pass event data using EventHandler<TEventArgs>.
+> Derive EventArgs base class to create custom event data class.
+> Events can be declared static, virtual, sealed, and abstract.
+> An Interface can include the event as a member.
+> Event handlers are invoked synchronously if there are multiple subscribers.
+
+
+Notes for Stock example:
+In .NET, the EventArgs class serves as a base class for event argument classes. When you define an event, you often
+want to provide additional information about the event to the event handlers. The EventArgs class provides a common
+pattern for passing such information.
+
+
+// Event for notifying when the stock price changes
+"public event StockPriceChangedEventHandler PriceChanged;"
+This line declares an event named PriceChanged, which is of type StockPriceChangedEventHandler. This event will be
+raised whenever the stock price changes, and subscribers can register event handlers to be notified of these changes.
+
+the Stock class encapsulates functionality related to managing stock prices and notifying subscribers when the price
+changes. It achieves this by declaring a delegate type for handling stock price changes, declaring an event to represent
+the PriceChanged event, and providing a property to manage the stock price. When the price changes, it raises the PriceChanged
+event to notify subscribers.
+
+
+The method named HandlePriceChanged is the event handler. It is responsible for handling stock price changes
+when notified by the Stock class. The method takes two parameters:
+object sender: Represents the object that raised the event. In this case, it would be an instance of the Stock class.
+StockPriceChangedEventArgs e: Represents the event data containing information about the stock price change.
+The NewPrice property of the StockPriceChangedEventArgs object holds the new price of the stock.
+
+the StockMonitor class provides a method named HandlePriceChanged that serves as an event handler for stock price changes.
+When invoked, this method prints the new stock price to the console. Instances of StockMonitor can be subscribed to
+the PriceChanged event of a Stock object to receive notifications about changes in the stock price.

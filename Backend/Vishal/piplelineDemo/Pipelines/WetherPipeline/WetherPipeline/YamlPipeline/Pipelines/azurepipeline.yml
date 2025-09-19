@@ -1,0 +1,79 @@
+trigger:  #Defines which branch to enable for CI
+    batch: true
+    branches:
+        include:
+        # - main
+        - develop
+    paths:
+      include:
+      - Vishal/**
+
+    
+
+pool:
+  name: 'Azure Pipelines'
+
+
+variables:
+  isMain: $[eq(variables['Build.SourceBranch'], 'refs/heads/main')] #used
+  isDev: $[eq(variables['Build.SourceBranch'], 'refs/heads/develop')] #not used
+  test: "Never Used"
+  BUILDOUTPUTFOLDER: "Never Used"
+  SOURCEFOLDER: "Never Used"
+  VMIMAGE: "windows-latest"
+  appType: webApp
+
+stages:
+- template: Templates/stage_level_templates/test_build_stage_template.yml # stage template to test, build and push
+  parameters:
+    projectFolder: Vishal\piplelineDemo\Pipelines\WetherPipeline/WetherPipeline.sln #${{variables.projectFolder}}
+    buildOutputFolder: $(BUILDOUTPUTFOLDER) #${{variables.buildOutputFolder}}
+    sourceFolder: $(SOURCEFOLDER) #${{variables.sourceFolder}}
+    vmImageName: "windows-latest"
+    
+
+- template: Templates/stage_level_templates/az_deployment_stage_template.yml # stage template for azure resource deployment to Develop
+  parameters:
+     vmImageName : "windows-latest" #${{variables.vmImage}}
+     azureSubscription : "pollys-service-connection"
+     resourceGroup : "Pollys"
+     bicepFilePath : "Vishal/piplelineDemo/Pipelines/WetherPipeline/WetherPipeline/YamlPipeline/infrastructure/main.bicep"
+     parameterFilePath : "Vishal/piplelineDemo/Pipelines/WetherPipeline/WetherPipeline/YamlPipeline/infrastructure/main.parameters.dev.json"
+     jobName : "resourcedeployment"
+     jobDescription : "deployemnt of resources"
+     scriptType : "bash"
+     environment: 'dev'
+     deploy: true
+    
+
+- template: Templates/stage_level_templates/app_deployment_stage_template.yml #stage template for application deployment
+  parameters:
+    serviceconnection : "pollys-service-connection"
+    subscriptionId: 'dev'
+    environment: 'dev'
+    appType: $(APPTYPE)
+
+#- template: templates/stage_level_templates/regression_test_stage_template.yml # stage template for regression testing
+#  parameters:
+#    environment: 'dev'
+# - template: templates/stage_level_templates/az_deployment_stage_template.yml # stage template for azure resource deployment to Develop
+#   parameters:
+#     vmImageName : $(VMIMAGE) #${{variables.vmImage}}
+#     azureSubscription : "Visual Studio Enterprise Subscription – MPN(Jasti&Rejilal) (e98c3e4e-98e4-4c82-b806-d130d5b7f791)"
+#     resourceGroup : "Ram890"
+#     bicepFilePath : "Ram/YamlPipeline/infrastructure/main.bicep"
+#     parameterFilePath : "Ram/YamlPipeline/infrastructure/main.parameters.prd.json"
+#     jobName : "resourcedeployment"
+#     jobDescription : "deployemnt of resources in prd"
+#     scriptType : "bash"
+#     environment: 'prd'
+#     deploy: true
+#     condition: "and(succeeded(), eq(variables.isMain, 'true'))"
+
+# - template: templates/stage_level_templates/app_deployment_stage_template.yml #stage template for application deployment
+#   parameters:
+#     serviceConnection: 'Visual Studio Enterprise Subscription – MPN(Jasti&Rejilal) (e98c3e4e-98e4-4c82-b806-d130d5b7f791)'
+#     subscriptionId: 'prd'
+#     environment: 'prd'
+#     appType: $(APPTYPE)
+#     condition: "and(succeeded(), eq(variables.isMain, 'true'))"

@@ -1,0 +1,33 @@
+.card{
+    text-align: center;
+    background-image: url("https://th.bing.com/th/id/R.9d5450589457bb014588966c92a6cd0e?rik=izdfEC5ymo9RvQ&riu=http%3a%2f%2fgetwallpapers.com%2fwallpaper%2ffull%2f5%2f0%2f8%2f1133424-cool-ocean-desktop-wallpaper-1920x1440-for-macbook.jpg&ehk=whH8LBPlZDW4RBpRG5YLIpg69m3djO2zJ%2fzyz6ck2V0%3d&risl=&pid=ImgRaw&r=0");
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
+.main-heading{
+    color: rgb(230, 81, 81);
+    font-family:monospace;
+    font-size: 30px;
+    font-weight: bold;
+    font-style: italic;
+    text-decoration: line-through;
+}  
+.paragraph {
+    color: rgb(15, 2, 2);
+}
+
+.button{
+    height: 36px;
+    width: 136px;
+    background-color: rgba(30, 86, 122, 0.493);
+    border-radius: 25px;
+    border-width: 2px;
+}
+
+.button-orange {
+    background-color: orange;
+}

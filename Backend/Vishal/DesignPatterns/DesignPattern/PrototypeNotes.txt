@@ -1,0 +1,16 @@
+Prototype Design Pattern
+The Prototype design pattern is part of the Creational Patterns family. It allows creating new 
+objects by copying an existing object, known as a prototype, rather than creating objects from 
+scratch. This pattern is particularly useful when object creation is resource-intensive
+(e.g., involves a lot of computation, network requests, or database queries).
+
+Key Concepts
+Prototype: An existing object that serves as a template.
+Clone: A method that creates a copy of the prototype object.
+The Prototype pattern can be implemented using shallow or deep copying, depending on whether the 
+cloned object needs to copy references (shallow copy) or clone all nested objects (deep copy).
+
+Real-World Example
+Imagine you're developing a game where each character has numerous attributes (name, skills, weapons, abilities, etc.).
+If creating a character from scratch involves a lot of configuration, it might be easier to create one base character 
+(a prototype) and clone it for new characters, modifying only specific attributes like the name or weapon.

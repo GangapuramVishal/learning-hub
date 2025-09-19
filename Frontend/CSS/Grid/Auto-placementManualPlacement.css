@@ -1,0 +1,34 @@
+/* Base look */
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: system-ui, sans-serif;
+  background: #111;
+  color: #eee;
+}
+
+h2 { margin: 0 0 .5rem; }
+p  { margin: 0 0 1rem; }
+
+.item {
+  background: #444;
+  display: grid;
+  place-items: center;
+  border-radius: 6px;
+  font-weight: 700;
+  min-height: 80px;
+}
+
+/* --- The grid & placement --- */
+.grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+  grid-auto-rows: 100px;                  /* height for each new row */
+  /* default auto-flow is: grid-auto-flow: row; */
+}
+
+/* Manual placements to contrast with auto-placement */
+.A { grid-column: 1 / 3; }      /* spans across columns 1 and 2 (up to line 3) */
+.B { grid-row: 2 / span 2; }    /* start at row line 2, occupy 2 rows tall     */
+/* C, D, E, F auto-place around the spans */

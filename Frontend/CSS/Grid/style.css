@@ -1,0 +1,186 @@
+    :root {
+      --bg: #0f172a;
+      --panel: #111827;
+      --ink: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #60a5fa;
+      --accent-2: #34d399;
+      --accent-3: #f59e0b;
+      --br: 10px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font: 16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+      color: var(--ink);
+      background: radial-gradient(1200px 800px at 10% -10%, #1f2937 0, #0b1020 60%, var(--bg) 100%);
+      padding: 24px;
+    }
+    h1, h2 { margin: 0 0 16px; }
+    h1 { font-size: 28px; }
+    h2 { font-size: 20px; color: var(--accent); }
+    p { color: var(--muted); margin: 0 0 16px; }
+
+    /* ---- Page layout using Grid Areas (Section 1) ---- */
+    .layout {
+      display: grid;
+      grid-template-columns: 220px 1fr;      /* 2 columns: sidebar + main */
+      grid-template-rows: auto 1fr auto;     /* header + content + footer */
+      grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
+      gap: 16px;
+      min-height: 100vh;
+    }
+    header, aside, main, footer {
+      border-radius: var(--br);
+      padding: 16px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.06);
+      backdrop-filter: blur(4px);
+    }
+    header { grid-area: header; }
+    aside  { grid-area: sidebar; }
+    main   { grid-area: main; }
+    footer { grid-area: footer; color: var(--muted); }
+
+    /* ---- A: Card Grid (auto-fit + minmax) ---- */
+    .card-grid {
+      /* Turn on grid inside MAIN content */
+      display: grid;
+      /* Responsive columns: as many as fit, each at least 220px, otherwise stretch evenly */
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px; /* shorthand for row+column gap */
+    }
+    .card {
+      border-radius: var(--br);
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 16px;
+    }
+    .card h3 { margin: 0 0 6px; font-size: 16px; }
+    .card p  { margin: 0; font-size: 14px; }
+
+    /* Demonstrate spanning specific cards */
+    .card.feature {
+      /* Span 2 columns on wider screens; auto collapses on small screens */
+      grid-column: span 2;
+      /* Span 2 rows as well (only visible if content height permits) */
+      grid-row: span 2;
+      background:
+        linear-gradient(135deg, rgba(96,165,250,.2), rgba(52,211,153,.15)),
+        linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+      border-color: rgba(96,165,250,.35);
+    }
+
+    /* ---- B: Alignment playground ---- */
+    .alignment-playground {
+      display: grid;
+      grid-template-columns: repeat(3, 120px);
+      grid-template-rows: repeat(2, 80px);
+      gap: 8px;
+      background: rgba(255,255,255,0.03);
+      padding: 12px;
+      border-radius: var(--br);
+      border: 1px dashed rgba(255,255,255,0.15);
+
+      /* Try toggling these during demo: */
+      /* place-items: center; */           /* shorthand for align-items + justify-items */
+      /* place-content: space-around; */   /* aligns the whole grid inside the container */
+    }
+    .box {
+      background: rgba(96,165,250,.18);
+      border: 1px solid rgba(96,165,250,.35);
+      border-radius: 8px;
+      display: grid;
+      place-items: center; /* centers text inside each box */
+      font-weight: 600;
+    }
+
+    /* Explicit placement using line numbers and named lines (Section C) */
+    .named-lines-demo {
+      display: grid;
+      grid-template-columns:
+        [sidebar-start] 260px
+        [content-start] 1fr
+        [content-end];
+      grid-template-rows: [row-1] auto [row-2] auto [row-3] auto;
+      gap: 10px;
+    }
+    .named-lines-demo .sidebar {
+      grid-column: sidebar-start / content-start; /* use named lines */
+      grid-row: row-1 / row-3;                    /* span two rows */
+      background: rgba(245,158,11,.15);
+      border: 1px solid rgba(245,158,11,.35);
+      border-radius: var(--br);
+      padding: 12px;
+    }
+    .named-lines-demo .content-1,
+    .named-lines-demo .content-2 {
+      background: rgba(52,211,153,.15);
+      border: 1px solid rgba(52,211,153,.35);
+      border-radius: var(--br);
+      padding: 12px;
+    }
+    .named-lines-demo .content-1 { grid-column: content-start / content-end; grid-row: row-1; }
+    .named-lines-demo .content-2 { grid-column: content-start / content-end; grid-row: row-2; }
+
+    /* ---- D: Implicit grid + auto placement ---- */
+    .implicit-demo {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      grid-auto-rows: 70px;               /* implicit row height */
+      grid-auto-flow: row dense;          /* fill holes if possible */
+      border: 1px dashed rgba(255,255,255,0.2);
+      padding: 10px;
+      border-radius: var(--br);
+    }
+    .implicit-demo .item {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      font-weight: 600;
+    }
+    .implicit-demo .tall { grid-row: span 2; }
+    .implicit-demo .wide { grid-column: span 2; }
+
+    /* ---- E: Subgrid (bonus) ---- */
+    .subgrid-outer {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    .subgrid-card {
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      gap: 8px;
+      padding: 12px;
+      border-radius: var(--br);
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.04);
+    }
+    .subgrid-card .inner {
+      display: grid;
+      grid-template-rows: subgrid;  /* header/body/footer rows inherited */
+      grid-row: 1 / -1;             /* make inner span the outer’s rows */
+      gap: 8px;
+    }
+    .badge { display:inline-block; padding: 2px 8px; border-radius: 999px; font-size: 12px; background: rgba(96,165,250,.25); border: 1px solid rgba(96,165,250,.45); }
+
+    /* ---- Responsive tweak for narrow screens ---- */
+    @media (max-width: 800px) {
+      .layout {
+        grid-template-columns: 1fr;        /* stack sidebar under header */
+        grid-template-areas:
+          "header"
+          "main"
+          "sidebar"
+          "footer";
+      }
+      .alignment-playground { grid-template-columns: repeat(3, 1fr); }
+      .card.feature { grid-column: auto; grid-row: auto; } /* remove spanning on small screens */
+    }

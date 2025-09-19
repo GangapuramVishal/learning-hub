@@ -1,0 +1,23 @@
+﻿>A Delegates in C# is a "type safe" "function pointer"
+> using delegates we can point to a fun.
+>type-safe = a delegates can point to only those function which matches the signature of delegates
+>just like classes and interfaces delegates are also reference type
+>a delegate should always create out side the classes
+> delegates in C# help us to pass a method as a argument to another method & also help us returning a method from within another method
+
+>> A Multicast delegate is a delegate that has a reference to multiple functions at the same time. When you invoke a multicast delegate,
+all the functions the delegate is pointing to are invoked.
+
+>> There are two approaches which can be used to create a multicast delegate:
+>> Using different instances of same delegate and using + operator.
+>> Using one single instance and point to different functions using +=
+>> A multicast delegate invokes the methods in the same order in which they are added. It uses FIFO (First In First Out) approach.
+>> If a delegate has a return type other than void, and if it is a multicast delegate, only the value of the last invoked method will be returned.
+>> In the same way, if the delegate has an output parameter, the value of the output parameter will be the value assigned to it by last method.
+>> we use multicast delegates for publisher subscribers design pattern
+
+
+Q&A
+1. as seen in the example instead of calling a method by using a delegate we can simply call method using obj of class ?? then why delegate's?
+A. delegates are not basically used to call a methods, the main use of delegates is to pass a method as a 
+parameter as a callback function to another method.

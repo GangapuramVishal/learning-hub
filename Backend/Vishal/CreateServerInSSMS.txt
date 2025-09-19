@@ -1,0 +1,21 @@
+in cmd  
+
+sqllocaldb create "localdb"
+sqllocaldb info "localdb"
+sqllocaldb start "localdb"
+
+Commands used:
+
+sqllocaldb create "VerbTables"
+sqllocaldb info "VerbTables"
+sqllocaldb start "VerbTables"
+
+To delete, use:
+sqllocaldb stop "VerbTables"
+
+To find your local db instances:
+Win+R (or just search Windows for 'run') then paste in:
+%LOCALAPPDATA%\Microsoft\Microsoft SQL Server Local DB\Instances\
+
+
+in SSMS in server name : (localdb)\localdb

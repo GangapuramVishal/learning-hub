@@ -1,0 +1,118 @@
+﻿pr:
+  branches:
+    include:
+      - main
+trigger:
+  branches:
+    include:
+      - main
+variables:
+  BuildConfiguration: 'Release'
+  isMain: $[eq(variables['Build.SourceBranch'], 'refs/heads/main')] 
+  VMIMAGE: "windows-latest"
+  appType: webApp
+pool:
+  vmImage: 'windows-latest'
+
+#Build stage
+stages:
+  - stage: Build
+    displayName: 'Build Application'
+    jobs:
+      - job: 'BuildJob'
+        displayName: 'Build Solution'
+        steps:
+          - task: UseDotNet@2
+            displayName: 'Use dotnet sdk'
+            inputs:
+              version: 8.x
+          - task: NuGetToolInstaller@0
+            displayName: Use NuGet 6.8 
+            inputs:
+              versionSpec: 6.8
+          - task: NuGetCommand@2
+            displayName: NuGet restore
+            inputs:
+              solution: Vishal/piplelineDemo/Demo_WebApplication1/Demo_WebApplication1.sln   
+          - task: VSBuild@1
+            displayName: Build solution
+            inputs:
+              solution: "Vishal/piplelineDemo/Demo_WebApplication1/Demo_WebApplication1.sln"
+              msbuildArgs: /p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:DesktopBuildPackageLocation=$(build.artifactstagingdirectory)\WebApp.zip /p:DeployIisAppPath="Default Web Site"
+              platform: $(buildplatform)
+              configuration: $(BuildConfiguration)
+              restoreNugetPackages: true
+          - task: CopyFiles@2
+            condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
+            displayName: Copy deployment template files to artifacts
+            inputs:
+              SourceFolder: Vishal/piplelineDemo/Demo_WebApplication1/Demo_WebApplication1.sln
+              Contents: "**/*"
+              TargetFolder: $(Build.ArtifactStagingDirectory)/Vishal/piplelineDemo/Demo_WebApplication1/Demo_WebApplication1.sln/Templates
+          - task: DotNetCoreCLI@2
+            condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
+            displayName: Publish
+            inputs:
+              command: publish
+              publishWebProjects: false
+              projects: Vishal/piplelineDemo/Demo_WebApplication1/Demo_WebApplication1.sln
+              arguments: "--configuration $(BuildConfiguration) --output $(build.artifactstagingdirectory)/Vishal/piplelineDemo/Demo_WebApplication1/Demo_WebApplication1.sln"
+              zipAfterPublish: True
+          - task: PublishBuildArtifacts@1
+            condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
+            displayName: "Publish Artifact"
+            inputs:
+              PathtoPublish: "$(build.artifactstagingdirectory)/Vishal/piplelineDemo/Demo_WebApplication1/Demo_WebApplication1.sln"
+              ArtifactName: drop
+
+#Azure Deployment
+  - stage: Azdeployment
+    displayName: 'azure resource deployment'
+    jobs:
+      - job: "resourcedeployment"
+        displayName: "deployment of resources"
+        pool:
+          vmImage: "windows-latest"
+        steps:         
+          - task: AzureCLI@2  #Validate Deployment
+            displayName: 'Azure bicep template resource deployment'
+            inputs:             
+              azureSubscription: "Interns"   #service connection name 
+              scriptType: "bash"
+              scriptLocation: 'inlineScript'
+              inlineScript: |
+                 az deployment group validate --resource-group "VishalRG" -f "Vishal/piplelineDemo/Demo_WebApplication1/yaml/Infrastructure/resource.bicep" --parameters "Vishal/piplelineDemo/Demo_WebApplication1/yaml/Infrastructure/resource.parameters.dev.json" 
+          - task: AzureCLI@2  #Create Deployment
+            displayName: 'Azure bicep template resource deployment'
+            inputs:
+              condition : "and(succeeded(), eq(variables.isMain, 'true'))"
+              azureSubscription: "Interns"
+              scriptType: "bash"
+              scriptLocation: 'inlineScript'
+              inlineScript: |
+                az deployment group create --resource-group  "VishalRG" -f "Vishal/piplelineDemo/Demo_WebApplication1/yaml/Infrastructure/resource.bicep" --parameters "Vishal/piplelineDemo/Demo_WebApplication1/yaml/Infrastructure/resource.parameters.dev.json"  
+ 
+#App Deployment
+  - stage: AppDeploy
+    displayName: 'app deployment'
+    jobs:
+      - deployment: DeployApp
+        displayName: DeployApp
+        environment: 'App-dev'
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - download: current
+                  artifact: drop
+                  patterns: '**/*'
+                - task: AzureRMWebAppDeployment@4
+                  displayName: 'app deployment'
+                  inputs:
+                    azureSubscription: 'Interns'
+                    webAppName: 'weatherforcastDev'
+                    Package: '$(Pipeline.Workspace)/drop/**.zip'
+                    enableCustomDeployment: true
+                    DeploymentType: zipDeploy 
+                    RemoveAdditionalFilesFlag: true
+                    appType: 'webApp'

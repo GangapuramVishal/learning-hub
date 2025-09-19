@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1300" height="720" viewBox="0 0 1300 720">
+  <defs>
+    <style>
+      .actor { fill:#f3f6fb; stroke:#1f3b5c; stroke-width:1.5; }
+      .lifeline { stroke:#8aa3bd; stroke-dasharray:6,6; stroke-width:1.5; }
+      .arrow { stroke:#1f3b5c; stroke-width:2; fill:none; marker-end: url(#arrowhead); }
+      .return { stroke:#2e7d32; stroke-width:2; fill:none; stroke-dasharray:4,4; marker-end: url(#arrowhead-green); }
+      .note { fill:#fffbe6; stroke:#d7c96f; }
+      .label { font-family:Segoe UI,Arial,sans-serif; font-size:14px; fill:#0c2340; }
+      .small { font-size:12px; fill:#0c2340; }
+      .title { font-weight:700; font-size:20px; fill:#0c2340; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#1f3b5c" />
+    </marker>
+    <marker id="arrowhead-green" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2e7d32" />
+    </marker>
+  </defs>
+
+  <text x="650" y="32" class="title" text-anchor="middle">Microsoft Defender APIs — App-only (Client Credentials) Auth Flow</text>
+  <text x="650" y="56" class="small" text-anchor="middle">Two resources ⇒ two tokens: MTP for Incidents, MDE for Alerts</text>
+
+  <rect x="70"  y="80" width="260" height="44" rx="8" class="actor"/>
+  <text x="200" y="108" class="label" text-anchor="middle">Your App (Confidential Client)</text>
+
+  <rect x="420" y="80" width="260" height="44" rx="8" class="actor"/>
+  <text x="550" y="108" class="label" text-anchor="middle">Entra ID (Azure AD) Token Endpoint</text>
+
+  <rect x="770" y="80" width="220" height="44" rx="8" class="actor"/>
+  <text x="880" y="108" class="label" text-anchor="middle">MTP API (Incidents)</text>
+
+  <rect x="1040" y="80" width="220" height="44" rx="8" class="actor"/>
+  <text x="1150" y="108" class="label" text-anchor="middle">MDE API (Alerts)</text>
+
+  <line x1="200" y1="124" x2="200" y2="700" class="lifeline"/>
+  <line x1="550" y1="124" x2="550" y2="700" class="lifeline"/>
+  <line x1="880" y1="124" x2="880" y2="700" class="lifeline"/>
+  <line x1="1150" y1="124" x2="1150" y2="700" class="lifeline"/>
+
+  <path d="M200,170 L540,170" class="arrow"/>
+  <text x="370" y="160" class="small" text-anchor="middle">client_credentials + scope = https://api.security.microsoft.com/.default</text>
+  <rect x="260" y="180" width="270" height="36" rx="6" class="note"/>
+  <text x="395" y="202" class="small" text-anchor="middle">App authenticates with Client ID + Client Secret</text>
+
+  <path d="M550,220 L210,220" class="return"/>
+  <text x="380" y="212" class="small" text-anchor="middle">access_token A (aud=api.security.microsoft.com; roles: Incident.Read.All)</text>
+
+  <path d="M200,270 L870,270" class="arrow"/>
+  <text x="535" y="260" class="small" text-anchor="middle">GET /api/incidents   Authorization: Bearer A</text>
+
+  <path d="M880,320 L210,320" class="return"/>
+  <text x="545" y="312" class="small" text-anchor="middle">200 OK — incidents</text>
+
+  <text x="200" y="370" class="small">Repeat for Alerts (different resource)</text>
+
+  <path d="M200,410 L540,410" class="arrow"/>
+  <text x="370" y="400" class="small" text-anchor="middle">client_credentials + scope = https://api.securitycenter.microsoft.com/.default</text>
+
+  <path d="M550,460 L210,460" class="return"/>
+  <text x="380" y="452" class="small" text-anchor="middle">access_token B (aud=api.securitycenter.microsoft.com; roles: Alert.Read.All)</text>
+
+  <path d="M200,510 L1140,510" class="arrow"/>
+  <text x="670" y="500" class="small" text-anchor="middle">GET /api/alerts   Authorization: Bearer B</text>
+
+  <path d="M1150,560 L210,560" class="return"/>
+  <text x="680" y="552" class="small" text-anchor="middle">200 OK — alerts</text>
+
+  <rect x="70" y="600" width="1160" height="80" rx="8" class="note"/>
+  <text x="90" y="622" class="small">Notes:</text>
+  <text x="90" y="642" class="small">• No user login; this is app-only auth. • Each API resource needs its own token (audience) and app roles (Incident.Read.* vs Alert.Read.*). • Tokens typically last ~1 hour; MSAL caches/renews.</text>
+</svg>

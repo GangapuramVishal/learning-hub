@@ -1,0 +1,32 @@
+﻿Collections in programming refer to data structures or classes that are used to group multiple items into a single unit.
+ *provide operations for adding, removing, and accessing elements, as well as iterating over the elements.
+ *Two types of collections, generic collections, and non-generic collections
+ *
+ *A Generic collection: They allow you to create type-safe collections that can store elements
+ *of a specific type. By specifying the type parameter when declaring an instance of a generic collection, you restrict
+ *the collection to only accept elements of that type. 
+ *
+ *In non-generic collections, each element can represent a value of a different type.
+ *The collection size is not fixed. Items from the collection can be added or removed at runtime. 
+ */
+
+
+
+
+
+
+
+
+     Non-Generic:
+
+    In programming, non-generic code deals with specific types of data. For example, if you're writing a function to add two integers,
+    it will only work with integers. If you want to add two doubles, you'd need a separate function for that. Non-generic code is not
+    flexible because you have to write specific implementations for each type you want to work with.
+    Non-generic collections store elements in object arrays internally, allowing them to hold any data type.
+
+    Generics:
+
+    Generics, on the other hand, allow you to write code that can work with any type of data. Instead of specifying the exact
+    type of data a method or class will work with, you use placeholders called type parameters. These placeholdersare like variables for types.
+    When you use a generic method or class, you specify the actual type you want to use, and the compiler generates the appropriate code for that type.
+    

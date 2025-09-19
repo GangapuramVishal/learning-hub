@@ -1,0 +1,28 @@
+.container{
+    border: 5px solid #022355;
+    display: flex;                          /*(if we apply flex by default flex direction will be row ➡️)*/
+    height: 80vh;
+    justify-content:center;
+    align-items:center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    gap: 20px; /*(I removed margin from iteam)*/
+    row-gap: 20px;
+    column-gap: 2px;
+    /* justify-content:space-around; */
+    /* flex-direction:row-reverse; */
+}
+.item{
+    height: 50px;
+    width: 50px;
+    border:2px solid black ;
+    /* margin: 4px; */
+    background-color: #e455554d;
+}
+
+/* .item1{
+    flex-grow: 2;
+    flex-shrink: 2;
+    align-self: flex-start;
+} */

@@ -1,0 +1,58 @@
+﻿>we can use IConfiguration, IOptions or IOptionsSnapshot to get appsettings configuration 
+values into an ASP .NET Core application.
+
+
+>When injecting configuration settings from appsettings.json into an ASP.NET Core app, 
+there are a number of ways you can do it.
+
+>We are going to have a look at injecting IConfiguration, IOptions and IOptionsSnapshot to 
+see which one we should use.
+
+>Using IConfiguration
+We can inject the IConfiguration instance into any class that supports dependency injection. 
+There doesn't need to be any extra configuration settings added in Program.cs to use this.
+
+Once the IConfiguration instance has been injected, we can call the GetValue method from the reference.
+The GetValue method requires a generic type, and we can add the type that we are expecting.
+
+When we test this endpoint, it outputs the configuration values. And if we change the 
+configuration values in appsettings.json and rerun the endpoint, it updates the values 
+without restarting the application.
+
+The problem with this method is that any extra configuration values added to Product would 
+need to be updated in all places where it's being used.
+
+>Another option is that we can bind the configuration values to a class.
+
+There are two ways we can bind the values from appsettings.json into this class.
+
+We can either get them from IConfiguration and provide the class as the generic type. 
+Or we can bind them to an existing instance of EmployeeOptions.
+
+>You can inject IOptions if you are using dependency injection
+If you are using dependency injection, you can add the options to the IoC container by 
+providing the configuration key.
+
+// Program.cs
+builder.Services.AddOptions<ProductOptions>()
+    .Bind(builder.Configuration.GetSection("Product"));
+Then you can inject them by calling IOptions, adding the class with the configuration value properties as the generic type.
+
+However, when you try to change the configuration values when using IOptions, you have to restart the application before the configuration values change.
+
+Using IOptionsSnapshot will update configuration values
+Instead of using IOptions, we can use IOptionsSnapshot. IOptionsSnapshot works in a similar way to IOptions, but it updates the configuration values without restarting the application.
+
+The reason being is that IOptions is set up as a singleton lifetime scope in dependency injection, whereas IOptionsSnapshot is set up as scoped.
+
+Adding a nested configuration class
+IOptions and IOptionsSnapshot has support for nested configuration values.
+
+It's best to use IOptionsSnapshot
+In conclusion, it's best to use IOptionsSnapshot if you're using dependency injection.
+
+It has the benefits of binding configuration values to a class, changing configuration values without restarting the application and being able to use nested configuration values.
+
+Although IConfiguration also allows you to change configuration values without restarting the application, there is a lot more code and potentially repeating code to reach the same result.
+
+

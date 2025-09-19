@@ -1,0 +1,23 @@
+﻿Collections are datastructures or classes that are present in System.Collections Namespace, whaich are used to store a set of elements in a single unit.
+
+
+The .NET Framework has re-implemented all the existing Non-Generic Collection classes such as ArrayList, Hashtable,
+SortedList, Stack, and Queue., etc. in Generic Collections such as ArrayList<T>, Dictionary<TKey, TValue>,
+SortedList<TKey, TValue>, Stack<T>, and Queue<T>. Here T is nothing but the type of values that we want to store
+in the collection. So, the most important point that you need to remember is while creating the objects of Generic
+Collection Classes, you need to explicitly provide the type of values that you are going to store in the collection.
+
+-- Boxing means converting a value type to an object type and Unboxing means converting an object type back to the value type.
+
+
+A Generic Collection is Strongly Type-Safe, Which type of data do you want to store in generic type, this information you have to provide at compile time.
+
+Stack<T>: It represents a variable size last-in-first-out (LIFO) collection of instances of the same specified type. 
+Queue<T>: It represents a first-in, first-out collection of objects. 
+HashSet<T>: It represents a set of values. It eliminates duplicate elements.
+SortedList<TKey, TValue>: It represents a collection of key/value pairs that are sorted by key based on the associated System.Collections.Generic.IComparer implementation. It automatically adds the elements in ascending order of key by default.
+List<T>: It represents a strongly typed list of objects that can be accessed by index. Provides methods to search, sort, and manipulate lists. It grows automatically as you add elements to it.
+Dictionary<TKey, Tvalue>: It represents a collection of keys and values.
+SortedSet<T>: It represents a collection of objects that are maintained in sorted order.
+SortedDictionary<TKey, TValue>: It represents a collection of key/value pairs that are sorted on the key.
+LinkedList<T>: It represents a doubly linked list.

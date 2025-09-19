@@ -1,0 +1,35 @@
+/* Base look */
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: system-ui, sans-serif;
+  background: #111;
+  color: #eee;
+}
+h2 { margin: 0 0 .5rem; }
+p  { margin: 0 0 1rem; }
+
+.item {
+  background: #444;
+  display: grid;
+  place-items: center;
+  border-radius: 6px;
+  font-weight: 600;
+  min-height: 80px;
+}
+
+/* ---- The grid: try auto-fit first ---- */
+.grid {
+  display: grid;
+  gap: 12px;
+
+  /* DEFAULT: auto-fit collapses empty tracks so real items can stretch */
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+
+  /* SWITCH TO auto-fill:
+     Comment the line above and uncomment the line below to compare.
+     auto-fill keeps "ghost" tracks (empty columns still take space),
+     which can leave visible gaps at the row end.
+  */
+  /* grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); */
+}

@@ -1,0 +1,21 @@
+body {
+    font-size: 25px;
+    font-family: monospace;
+}
+
+p {
+    color:chocolate;
+}
+
+.gray{
+    color: pink;
+}
+
+#second {
+    font-style: italic;
+}
+
+.highlight {
+    text-transform: uppercase;
+    background-color: gold;
+}

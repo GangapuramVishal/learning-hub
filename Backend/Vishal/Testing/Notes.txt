@@ -1,0 +1,108 @@
+Testing refers to process of verifying that our application behaves correctly under different conditions.
+NUnit:
+NUnit is a popular open-source unit testing framework for C#. It allows you to write and execute unit tests for your code.
+ 
+Key features of NUnit include:
+Test Attributes: You can use attributes like [Test], [TestCase], and [TestFixture] to define test methods and test fixtures.
+Assertions: NUnit provides various assertion methods (e.g., Assert.AreEqual, Assert.IsTrue, etc.) to verify expected behavior.
+Test Runners: NUnit integrates with various test runners (e.g., Visual Studio, ReSharper, and command-line runners) for executing tests.
+Parameterized Tests: You can create parameterized tests using [TestCase] attributes.
+Setup and Teardown: NUnit allows you to set up preconditions ([SetUp]) and clean up after tests ([TearDown]).
+To get started with NUnit, follow these steps:
+Install the NUnit NuGet package in your project.
+Create a test class and decorate it with [TestFixture].
+Write test methods within the class, using [Test] attributes.
+Use assertions to verify expected behavior.
+
+
+Unit testing in C# using NUnit is a process of verifying the correctness of individual units of code. NUnit provides a framework for writing and executing tests, enabling developers to ensure the desired behavior, identify bugs, and support code maintainability and refactoring.
+
+
+Moq C# (How it Works for Developers)
+In the world of software development, testing is an indispensable process. It ensures that your code works as expected and helps catch bugs before they reach production. One vital aspect of testing is mocking, and when it comes to C# testing, MOQ is a powerful tool in a developer's arsenal. It provides support for lambda expressions. MOQ, short for "Mock Object Framework for .NET," simplifies the process of creating mock objects for unit testing. In this article, we will delve into MOQ in C#
+
+NUnit uses attributes similar:
+>TestFixture (equivalent to TestClass in MSTest) denotes a class containing unit tests.
+>Test (equivalent to TestMethod in MSTest) marks a method as a test method.
+>SetUp is used to identify a method that runs before each test.
+You can create additional test classes and methods as needed.
+
+// Equality asserts
+Assert.AreEqual(object expected, object actual);
+Assert.AreEqual(object expected, object actual, string message, params object[] parms);
+
+Assert.AreNotEqual(object expected, object actual);
+Assert.AreNotEqual(object expected, object actual, string message, params object[] parms);
+
+// Identity asserts
+Assert.AreSame(object expected, object actual);
+Assert.AreSame(object expected, object actual, string message, params object[] parms);
+
+Assert.AreNotSame(object expected, object actual);
+Assert.AreNotSame(object expected, object actual, string message, params object[] parms);
+
+// Condition asserts
+// (For simplicity, methods with message signatures are omitted.)
+Assert.IsTrue(bool condition);
+Assert.IsFalse(bool condition);
+
+Assert.IsNull(object anObject);
+Assert.IsNotNull(object anObject);
+
+Assert.IsNaN(double aDouble);
+
+Assert.IsEmpty(string aString);
+Assert.IsNotEmpty(string aString);
+
+Assert.IsEmpty(ICollection collection);
+Assert.IsNotEmpty(ICollection collection);
+
+What is MOQ?
+MOQ is a mocking framework for .NET applications that allows developers to create mock objects quickly and efficiently. Mock objects are objects that simulate the behavior of real objects in your application, making it easier to isolate and test specific parts of your code. MOQ simplifies the process of creating and working with these mock objects.
+
+
+Moq:
+Purpose: Moq is a mocking library specifically designed for creating mock objects in unit tests.
+Usage:
+You use Moq to create mock implementations of interfaces or abstract classes.
+Mocks simulate behavior of dependencies (e.g., database access, external services) during testing.
+Features:
+Provides a fluent API for defining mock behavior (e.g., setting return values, verifying method calls).
+Helps isolate the code under test by replacing real dependencies with mock objects.
+Supports setups (e.g., Setup, Returns, Verifiable) to configure mock behavior.
+Advantages:
+Simplifies testing by allowing you to focus on the behavior of the code being tested.
+Helps avoid hitting external resources (e.g., databases) during unit tests.
+Improves test reliability and speed.
+
+
+You can write unit tests for your ASP.NET Core Web API without using mock objects. While using mocks (such as Moq) is common for isolating dependencies, it’s not strictly necessary for all scenarios. Here’s how you can write tests without mocks:
+
+Test the Controller Actions Directly:
+In your NUnit test methods, create an instance of your controller and call the action methods directly.
+Verify that the expected results (such as status codes, data, or error messages) are returned.
+You’ll be testing the actual behavior of your controller without mocking any dependencies.
+Arrange, Act, and Assert (AAA):
+Follow the AAA pattern in your test methods:
+Arrange: Set up any necessary context (create controller instances, set request parameters, etc.).
+Act: Call the controller action being tested.
+Assert: Verify the expected behavior.
+
+
+
+
+
+
+
+
+
+
+Error's:
+
+The error message CS1503: Argument 1: cannot convert from 'System.Collections.Generic.List<BookInventorty.DAL.Models.Book>' to 'Microsoft.EntityFrameworkCore.DbSet<BookInventorty.DAL.Models.Book>' indicates a type mismatch between the expected type and the actual type of the argument being passed.
+
+The main reason for this error is that the Books property of the BookDbContext class is expected to be of type DbSet<Book> (from Entity Framework Core), but it's being set up to return a List<Book> instead.
+
+This error is indicating an implicit conversion issue. The Books property of BookDbContext is expected to be of type DbSet<Book>, which is a specific type provided by Entity Framework Core to represent a database table. However, in the setup of the mock BookDbContext, it's being configured to return a List<Book>, which is a general .NET collection type.
+
+To resolve this error, you need to ensure that the Books property of the mock BookDbContext returns a DbSet<Book> instead of a List<Book>. This can be achieved by using a helper method like MockDbSetHelper.CreateDbSet() to create a mock DbSet<Book> from a collection of books. This way, the return type of the mock BookDbContext will match the expected type, resolving the type conversion error

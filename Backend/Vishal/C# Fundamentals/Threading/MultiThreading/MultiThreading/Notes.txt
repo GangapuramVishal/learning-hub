@@ -1,0 +1,33 @@
+﻿Multithreading:
+Multithreading refers to the execution of multiple threads simultaneously within a single process. In C#, you can achieve
+multithreading by creating and managing multiple Thread objects, each representing a separate execution path. Multithreading
+allows programs to utilize multiple CPU cores efficiently, thereby improving performance and responsiveness.
+
+Main thread: executes one after the other
+ => Test1()
+ => Test2()
+ => Test3()
+
+ Multi thread:
+ Thread1 => 2 sec Test1()
+ Thread2 => 2 sec Test2()
+ Thread3 => 2 sec Test3()
+
+Async/Await: C# includes the async and await keywords, simplifying asynchronous programming. These keywords allow you to write
+asynchronous code that can run concurrently with other tasks without blocking the calling thread. Asynchronous programming is
+essential for scalable and responsive applications.
+
+
+
+The Thread class and async/await are not the same, although they both involve concurrency in C#.
+
+The Thread class is a fundamental way to create and manage threads directly in C#. It allows you to explicitly 
+start, pause, resume, and stop threads.
+
+On the other hand, async/await is a higher-level asynchronous programming model introduced in C# 5.0. 
+It simplifies asynchronous programming by allowing you to write asynchronous code in a more sequential 
+manner, resembling synchronous code. Under the hood, async/await uses tasks from the Task Parallel Library (TPL) 
+to achieve concurrency without explicitly dealing with threads.
+
+In summary, while both Thread and async/await enable concurrency in C#, they operate at different levels of 
+abstraction and offer different approaches to managing asynchronous operations.

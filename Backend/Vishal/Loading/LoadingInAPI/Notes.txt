@@ -1,0 +1,33 @@
+﻿Let's explore the key differences between eager loading, lazy loading, and explicit loading using the provided properties (Customers and Orders) as examples:
+
+Eager Loading:
+
+Definition: Eager loading fetches related data along with the main entities in a single query.
+Example: In the GetCustomersWithOrdersEager method, when you fetch customers (_context.Customers.Include(c => c.Orders).ToList()), 
+both customer and order data are retrieved from the database in one go.
+
+Characteristics:
+Reduces the number of database round-trips by fetching all required data upfront.
+Suitable when you know in advance that you'll need related data and want to minimize additional queries.
+Can lead to fetching unnecessary data if related entities are not always required.
+
+Lazy Loading:
+Definition: Lazy loading defers the loading of related data until it's actually accessed.
+Example: In the GetCustomersLazy method, only customer data is initially fetched (_context.Customers.ToList()). Accessing the
+Orders property of each customer triggers separate queries to load order data as needed.
+
+Characteristics:
+Delays the loading of related data until it's required, which can improve performance by avoiding unnecessary data retrieval.
+Can lead to N+1 query issues if not used carefully, where additional queries are made for each related entity.
+Useful when working with large or deeply nested object graphs, as it allows selective loading of related data.
+
+Explicit Loading:
+Definition: Explicit loading involves manually triggering the loading of related data for specific entities.
+Example: In the GetCustomersWithOrdersExplicit method, customer data is fetched first (_context.Customers.ToList()), and then the
+associated order data is loaded for each customer in a loop (_context.Entry(customer).Collection(c => c.Orders).Load()).
+
+Characteristics:
+Provides fine-grained control over when and how related data is loaded.
+Useful when you want to defer the loading of related entities until a specific point in your code or when lazy loading is not applicable.
+Can result in multiple round-trips to the database if not used efficiently, as each call to Load triggers a separate query.
+In summary, eager loading fetches all related data upfront, lazy loading defers loading until it's accessed, and explicit loading allows manual control over when related data is loaded. The choice between these loading strategies depends on factors such as performance requirements, data access patterns, and the structure of your object graph.

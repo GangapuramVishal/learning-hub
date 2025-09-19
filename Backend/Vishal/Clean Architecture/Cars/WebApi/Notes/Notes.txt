@@ -1,0 +1,46 @@
+﻿CQRS stands for Command Query Responsibility Segregation. It is a software architectural pattern that suggests separating
+the responsibilities of handling commands (write operations) and queries (read operations) into different parts of an application.
+
+In traditional architectures, a single model is often used to handle both read and write operations. However, as applications
+grow in complexity, this approach can lead to various challenges such as performance bottlenecks, scalability issues,
+and difficulty in maintaining and evolving the codebase.
+
+CQRS addresses these challenges by advocating for a clear separation between the components responsible for handling
+commands and those responsible for handling queries. This typically involves:
+
+Command Side (Write Model): This side of the architecture is responsible for handling commands, which represent actions
+that change the state of the system. Commands are typically processed by command handlers, which validate the input, 
+execute the necessary business logic, and update the state of the application. The write model often employs domain-driven
+design principles and encapsulates the domain logic.
+Query Side (Read Model): This side of the architecture is responsible for handling queries, which represent requests for
+data retrieval or read-only operations. Queries are typically processed by query handlers, which fetch data from one or
+more data sources and prepare it for presentation. The read model is optimized for query performance and may involve
+denormalized or pre-calculated data structures tailored to specific query requirements.
+
+
+IRequest and IRequestHandler are part of the MediatR library, which is often used in C# applications to implement the Mediator pattern.
+
+IRequest: 
+This is an interface provided by MediatR. It's used to represent a request that your application needs to handle. 
+Think of it as a way to encapsulate a specific action or command that your application can perform. In your code,
+CreateCarRequest is a class that implements IRequest, indicating that it represents a request to create a new car.
+IRequestHandler: This is another interface provided by MediatR. It's used to define how a specific request should
+be handled. In your code, CreateCarRequestHandler is a class that implements IRequestHandler<CreateCarRequest>,
+indicating that it's responsible for handling requests to create a new car. Inside the Handle method of this class,
+you would typically write the logic to carry out the actual creation of the car.
+So, in summary:
+
+IRequest defines what your application wants to do (e.g., create a car).
+IRequestHandler defines how your application should handle that request (e.g., execute the necessary logic to create the car).
+
+By using MediatR and these interfaces, you can keep your application's code organized and decoupled, making it easier
+to maintain and extend in the future.
+
+In MediatR, you can use the ISender interface to send messages between different parts of your application.
+Starting from MediatR version 9.0, the IMediator interface has been split into two separate interfaces:
+ISender: Provides the Send method capability.
+IPublisher: Provides the Publish method capability.
+
+
+read this: 
+https://codewithmukesh.com/blog/mediatr-pipeline-behaviour/

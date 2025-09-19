@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title> Portfolio </title>
+        <meta name="description" content="Personal portfolio website of G. Vishal, .NET Developer">
+        <meta name="Keywords" content="Vishal, portfolio, developer, .NET, HTML">
+        <meta name="Author" content="Bobby">
+    </head>
+    <body>
+        <h1> 👋 Hello, I'm G. Vishal </h1>
+        <p>Tech Enthusiast and Software Developer at <strong>@Ariqt International</strong>.</p>
+
+        <nav>
+           <a href="#Skills"> Skills </a> 
+           <a href="#routine">Daily Routine</a>
+           <a href="#projects">Projects</a>
+           <a href="#contact">Contact</a>
+           <a href="#media">Media</a>
+        </nav>
+        <hr>
+
+        <section>
+            <h2> About Me </h2>
+            <p>I specialize in .NET, C#, and Python. I love building web apps with ASP.NET Core and working on cloud solutions in Azure.</p>
+        </section>
+
+        <section id="Skills">
+            <h2> Skills</h2>
+            <ul>
+                <li>.NET Core</li>
+                <li>ASP.NET Web API</li>
+                <li>Entity Framework</li>
+                <li>Azure Cloud</li>
+                <li>SQL Server</li>
+                <li>HTML</li>
+            </ul>
+        </section>
+
+        <section id="routine">
+            <h2>My Daily Routine</h2>
+            <ol>
+              <li>Wake up</li>
+              <li>Go to Gym</li>
+              <li>Work at Ariqt</li>
+              <li>Code and Learn</li>
+              <li>Sleep</li>
+            </ol>
+        </section>
+        
+        <section id="projects">
+            <h2>My Projects</h2>
+            <table border="1">
+                <tr>
+                    <th>Project</th>
+                    <th>Tech Used</th>
+                    <th>Status</th>
+                </tr>
+                <tr>
+                    <td>ChatBot</td>
+                    <td>ASP .NET Core, Semantic Kernal</td>
+                    <td>In Progress</td>
+                </tr>
+            </table>
+        </section>
+
+        <section>
+            <h2>More</h2>
+            <p><a href="#birds">Go to Birds Section</a></p>
+            <p><a href="#food">Go to Food Article</a></p>
+        </section>
+
+        <section id="birds">
+            <h3>Birds Section</h3>
+            <p>Birds are a group of warm-blooded vertebrates constituting the class Aves.</p>
+        </section>
+
+        <section id="food">
+            <h3>Food & Diet</h3>
+            <p>Eat healthy. Exercise regularly. Sleep well.</p>
+        </section>
+
+        <h2>Profile Banner</h2>
+        <img src="images/Profile.JPG" width="600" height="600" alt="Profile Banner" title="Linkedin Banner">
+
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <form>
+                <label for="firstname" >First Name:</label><br>
+                <input type="text" id="firstname" name="firstname"><br><br>
+
+                <label for="lastname">Last Name:</label><br>
+                <input type="text" id="lastname" name="lastname"><br><br>
+
+                <label for="phonenumber">Phone Number:</label><br>
+                <input type="number" name="phonenumber" id="phonenumber"><br><br>
+
+                <label>Comments:</label><br>
+                <textarea rows="5" cols="40"></textarea><br><br>
+
+                Are you available for freelance?<br>
+                <input type="radio" name="freelance" value="yes">Yes<br>
+                <input type="radio" name="freelance" value="no">No<br>
+                <input type="radio" name="freelance" value="maybe">Maybe<br><br>
+
+                Technology you work with: <br>
+                <input type="checkbox" checked> .Net <br>
+                <input type="checkbox" >JavaScript <br>
+                <input type="checkbox" >Azure <br><br>
+
+                Country:
+                <select>
+                    <option>India</option>
+                    <option>UK</option>
+                    <option>Netherlands</option>
+                </select><br><br>
+
+                Start Date: <input type="date"><br><br>
+                Number of days available: <input type="number" min="1" max="10"><br><br>
+
+                <input type="submit" value="submit">
+            </form>
+        </section>
+
+        <section id="media">
+            <h2> My media</h2>
+
+            <audio controls>
+                <source src="media/sample.mp3" type="audio/mp3">
+                Your browser does not support audio.
+            </audio><br><br>
+
+            <video width="640" height="360" controls>
+                <source src="media/sample.mp4" type="video/mp4">
+                Your browser does not support video. 
+            </video>
+        </section>
+
+        <h2> Iframe Demo</h2>
+        <iframe src="second.html" name="practiceiframe" width="400" height="200" frameboarder="1"></iframe><br>
+        <a href="index.html" target="practiceiframe">Switch Content</a>
+
+        <p>&copy; 2025 Vishal. All rights reserved. &lt; code&gt; &amp; Learn &#8482; &#63; </p> 
+    </body>
+</html>

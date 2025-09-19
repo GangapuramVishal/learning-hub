@@ -1,0 +1,138 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Learning\\AI\\AutoGen_Agents\\ChatDrivenOnboarding\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{99A9F974-24AF-48CE-88C7-9C878F463DA7}|ChatDrivenOnboarding.csproj|c:\\learning\\ai\\autogen_agents\\chatdrivenonboarding\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A9F974-24AF-48CE-88C7-9C878F463DA7}|ChatDrivenOnboarding.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A9F974-24AF-48CE-88C7-9C878F463DA7}|ChatDrivenOnboarding.csproj|c:\\learning\\ai\\autogen_agents\\chatdrivenonboarding\\utile\\chatclientprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A9F974-24AF-48CE-88C7-9C878F463DA7}|ChatDrivenOnboarding.csproj|solutionrelative:utile\\chatclientprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A9F974-24AF-48CE-88C7-9C878F463DA7}|ChatDrivenOnboarding.csproj|c:\\learning\\ai\\autogen_agents\\chatdrivenonboarding\\chatdrivenonboarding.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{99A9F974-24AF-48CE-88C7-9C878F463DA7}|ChatDrivenOnboarding.csproj|solutionrelative:chatdrivenonboarding.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A9F974-24AF-48CE-88C7-9C878F463DA7}|ChatDrivenOnboarding.csproj|c:\\learning\\ai\\autogen_agents\\chatdrivenonboarding\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{99A9F974-24AF-48CE-88C7-9C878F463DA7}|ChatDrivenOnboarding.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A9F974-24AF-48CE-88C7-9C878F463DA7}|ChatDrivenOnboarding.csproj|c:\\learning\\ai\\autogen_agents\\chatdrivenonboarding\\chatdrivenonboarding.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{99A9F974-24AF-48CE-88C7-9C878F463DA7}|ChatDrivenOnboarding.csproj|solutionrelative:chatdrivenonboarding.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 223,
+          "SelectedChildIndex": 8,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Learning\\AI\\AutoGen_Agents\\ChatDrivenOnboarding\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Properties\\launchSettings.json",
+              "ToolTip": "C:\\Learning\\AI\\AutoGen_Agents\\ChatDrivenOnboarding\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-06-18T12:07:10.495Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ChatDrivenOnboarding",
+              "DocumentMoniker": "C:\\Learning\\AI\\AutoGen_Agents\\ChatDrivenOnboarding\\ChatDrivenOnboarding.csproj",
+              "RelativeDocumentMoniker": "ChatDrivenOnboarding.csproj",
+              "ToolTip": "C:\\Learning\\AI\\AutoGen_Agents\\ChatDrivenOnboarding\\ChatDrivenOnboarding.csproj",
+              "RelativeToolTip": "ChatDrivenOnboarding.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-06-18T12:01:22.587Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ChatDrivenOnboarding.csproj",
+              "DocumentMoniker": "C:\\Learning\\AI\\AutoGen_Agents\\ChatDrivenOnboarding\\ChatDrivenOnboarding.csproj",
+              "RelativeDocumentMoniker": "ChatDrivenOnboarding.csproj",
+              "ToolTip": "C:\\Learning\\AI\\AutoGen_Agents\\ChatDrivenOnboarding\\ChatDrivenOnboarding.csproj",
+              "RelativeToolTip": "ChatDrivenOnboarding.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-06-18T05:43:42.132Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Learning\\AI\\AutoGen_Agents\\ChatDrivenOnboarding\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Learning\\AI\\AutoGen_Agents\\ChatDrivenOnboarding\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAI4AAAAAAAAAAAAwwKoAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-18T05:36:51.041Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ChatClientProvider.cs",
+              "DocumentMoniker": "C:\\Learning\\AI\\AutoGen_Agents\\ChatDrivenOnboarding\\Utile\\ChatClientProvider.cs",
+              "RelativeDocumentMoniker": "Utile\\ChatClientProvider.cs",
+              "ToolTip": "C:\\Learning\\AI\\AutoGen_Agents\\ChatDrivenOnboarding\\Utile\\ChatClientProvider.cs",
+              "RelativeToolTip": "Utile\\ChatClientProvider.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAgwB4AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-18T12:15:37.456Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 208,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+@Di_LifeTime_HostAddress = http://localhost:5283
+
+GET {{Di_LifeTime_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

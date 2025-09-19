@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>CSS Grid – Complete POC Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="layout">
+    <header>
+      <h1>CSS Grid – Everything You Need in One Page</h1>
+      <p>We’ll use areas for the page, a responsive card grid, alignment tricks, named lines, implicit grid, and subgrid.</p>
+    </header>
+
+    <aside>
+      <h2>Sections</h2>
+      <ol>
+        <li>Page layout with <code>grid-template-areas</code></li>
+        <li>Responsive card grid (<code>auto-fit</code> + <code>minmax()</code>)</li>
+        <li>Alignment playground</li>
+        <li>Named lines + explicit placement</li>
+        <li>Implicit grid &amp; <code>grid-auto-flow: dense</code></li>
+        <li>Bonus: <code>subgrid</code></li>
+      </ol>
+      <p class="badge">Pro tip</p>
+      <p>Resize the window and watch the card grid reflow without media queries.</p>
+    </aside>
+
+    <main>
+      <!-- A: Responsive Card Grid -->
+      <h2>1) Responsive Card Grid (tracks, fr, minmax, repeat, gaps, spanning)</h2>
+      <p>Columns use <code>repeat(auto-fit, minmax(220px, 1fr))</code>. Cards can span columns/rows.</p>
+      <div class="card-grid" aria-label="Responsive card grid">
+        <div class="card feature">
+          <h3>Feature (spans 2x2)</h3>
+          <p>Demonstrates <code>grid-column: span 2</code> and <code>grid-row: span 2</code>.</p>
+        </div>
+        <div class="card"><h3>Card 1</h3><p>Equal-width columns using <code>1fr</code>.</p></div>
+        <div class="card"><h3>Card 2</h3><p>Available space is shared via fractions.</p></div>
+        <div class="card"><h3>Card 3</h3><p><code>gap</code> applies between rows and columns.</p></div>
+        <div class="card"><h3>Card 4</h3><p>Auto placement fills in next available cell.</p></div>
+        <div class="card"><h3>Card 5</h3><p>Try narrowing the viewport.</p></div>
+        <div class="card"><h3>Card 6</h3><p>Cards wrap to new rows as needed.</p></div>
+      </div>
+
+      <!-- B: Alignment -->
+      <h2 style="margin-top:24px;">2) Alignment Playground</h2>
+      <p>
+        The grid below has fixed tracks: <code>grid-template-columns: repeat(3, 120px)</code>,
+        <code>grid-template-rows: repeat(2, 80px)</code>. Toggle these in DevTools:
+        <code>place-items</code> (items within cells) and <code>place-content</code> (the entire grid in its container).
+      </p>
+      <div class="alignment-playground">
+        <div class="box">A</div>
+        <div class="box">B</div>
+        <div class="box">C</div>
+        <div class="box">D</div>
+        <div class="box">E</div>
+        <div class="box">F</div>
+      </div>
+
+      <!-- C: Named Lines -->
+      <h2 style="margin-top:24px;">3) Named Lines + Explicit Placement</h2>
+      <p>Use line names for readability, e.g. <code>[sidebar-start]</code>, then place items with those names.</p>
+      <div class="named-lines-demo" style="margin-bottom: 8px;">
+        <div class="sidebar">
+          <strong>Sidebar</strong><br/>
+          Placed via <code>grid-column: sidebar-start / content-start</code> &amp; <code>grid-row: row-1 / row-3</code>.
+        </div>
+        <div class="content-1"><strong>Content 1</strong> — spans named rows.</div>
+        <div class="content-2"><strong>Content 2</strong> — same track, next row.</div>
+      </div>
+
+      <!-- D: Implicit Grid -->
+      <h2 style="margin-top:24px;">4) Implicit Grid &amp; Dense Packing</h2>
+      <p>
+        We only defined 4 columns. Rows are created implicitly with <code>grid-auto-rows: 70px</code>.
+        <code>grid-auto-flow: row dense</code> tries to fill “holes” for a tighter layout.
+      </p>
+      <div class="implicit-demo">
+        <div class="item tall">tall</div>
+        <div class="item">1</div>
+        <div class="item wide">wide</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item tall">tall</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item wide">wide</div>
+        <div class="item">6</div>
+      </div>
+
+      <!-- E: Subgrid -->
+      <h2 style="margin-top:24px;">5) Bonus: Subgrid (aligns inner elements to outer tracks)</h2>
+      <p>
+        The card’s inner layout uses <code>grid-template-rows: subgrid</code> to line up header/body/footer across all cards.
+      </p>
+      <div class="subgrid-outer">
+        <article class="subgrid-card">
+          <header><strong>Card A</strong></header>
+          <div class="inner">
+            <div>Body text that may be short.</div>
+            <footer><small>Footer</small></footer>
+          </div>
+        </article>
+        <article class="subgrid-card">
+          <header><strong>Card B</strong></header>
+          <div class="inner">
+            <div>Body text that is much longer and wraps onto multiple lines to show how subgrid keeps footers aligned, regardless of content length.</div>
+            <footer><small>Footer</small></footer>
+          </div>
+        </article>
+        <article class="subgrid-card">
+          <header><strong>Card C</strong></header>
+          <div class="inner">
+            <div>Medium content.</div>
+            <footer><small>Footer</small></footer>
+          </div>
+        </article>
+      </div>
+    </main>
+
+    <footer>
+      <small>
+        You just saw: areas, tracks, fr, minmax, repeat, spanning, gaps, alignment, named lines, implicit grid, dense packing, subgrid, and responsiveness.
+      </small>
+    </footer>
+  </div>
+</body>
+</html>

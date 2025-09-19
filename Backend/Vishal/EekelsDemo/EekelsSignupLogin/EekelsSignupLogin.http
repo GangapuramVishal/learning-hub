@@ -1,0 +1,6 @@
+@EekelsSignupLogin_HostAddress = http://localhost:5240
+
+GET {{EekelsSignupLogin_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

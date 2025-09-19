@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "ChatDrivenOnboarding": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "AZURE_OPENAI_ENDPOINT": "https://eekels.openai.azure.com/",
+        "AZURE_OPENAI_KEY": "ccc8ed9efa9c4c5db25b28df6f113318",
+        "AZURE_OPENAI_DEPLOYMENT": "eekelsgpt"
+      }
+    }
+  }
+}

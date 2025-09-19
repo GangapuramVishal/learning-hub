@@ -1,0 +1,10 @@
+version: '3.8'
+ 
+services:
+  sender:
+    build:
+      context: . 
+      dockerfile: Sender/Dockerfile  # Specify the Dockerfile for Sender
+    container_name: "sender_app"
+    environment:
+      - SERVICE_BUS_CONNECTION_STRING=<Your-Sender-Service-Bus-Connection-String>  # Azure Service Bus connection string for Sender

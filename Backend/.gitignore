@@ -1,0 +1,50 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# Build Results
+bin/
+obj/
+
+# NuGet
+*.nupkg
+*.snupkg
+*.nuget.cache
+*.dgspec.json
+project.assets.json
+project.nuget.cache
+*.csproj.nuget.dgspec.json
+
+# Rider (if used)
+.idea/
+
+# Test Results
+TestResults/
+*.trx
+*.coverage
+*.coveragexml
+*.vspx
+*.vsp
+*.vspscc
+
+# Logs
+*.log
+
+# User secrets
+secrets.json
+
+# OS-specific
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# VS Code settings
+.vscode/
+
+# app settings (only if not meant to be tracked)
+appsettings.json
+
+# File-based index files
+*.vsidx

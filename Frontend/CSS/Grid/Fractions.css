@@ -1,0 +1,36 @@
+body{
+    margin: 0;
+    padding: 20px;
+    font-family: sans-serif;
+    background: #111;
+    color: #eee;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 10px;
+}
+
+.item {
+    background: #444;
+    display: grid;
+    place-items: center;
+    border-radius: 6px;
+    font-weight: bold;
+    padding: 20px;
+}
+
+/* Explanation
+
+1fr 2fr 1fr divides the available space into 4 parts.
+
+First column = 1 part
+
+Second column = 2 parts (twice as wide)
+
+Third column = 1 part
+
+Together, they fill 100% of the container (after gaps).
+
+Example: if the grid is 800px wide (after gaps), columns will be ~200px / 400px / 200px. */

@@ -1,0 +1,54 @@
+/* Base look */
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: system-ui, sans-serif;
+  background: #111;
+  color: #eee;
+}
+h2 { margin: 0 0 .5rem; }
+p  { margin: 0 0 1rem; }
+
+/* Items */
+.item {
+  background: #444;
+  display: grid;
+  place-items: center;
+  border-radius: 6px;
+  font-weight: 700;
+  min-height: 80px;
+}
+
+/* The grid */
+.grid {
+  display: grid;
+  gap: 12px;
+
+  /* Only COLUMNS are explicitly defined → rows will be created implicitly */
+  grid-template-columns: repeat(3, 1fr);
+
+  /* Size of any implicitly-created rows */
+  grid-auto-rows: 80px;
+
+  /* Placement strategy:
+     - 'row' = place items left→right, top→bottom
+     - 'dense' = try to back-fill earlier holes if later items can fit
+       (can cause visual reordering)
+  */
+  grid-auto-flow: row dense;
+
+  /* Optional to better visualize spacing */
+  max-width: 900px;
+  border: 1px dashed #666;
+  padding: 8px;
+}
+
+/* Spanning that creates holes to demonstrate dense back-filling */
+.A { grid-column: span 2; }  /* takes 2 columns wide */
+.B { grid-row: span 2; }     /* takes 2 rows tall   */
+.E { grid-column: span 2; }  /* takes 2 columns wide */
+
+/* --- Try this:
+     1) Keep 'row dense' (default) and observe positions.
+     2) Change to 'grid-auto-flow: row;' (remove 'dense') and compare.
+*/

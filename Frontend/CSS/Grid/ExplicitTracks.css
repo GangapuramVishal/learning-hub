@@ -1,0 +1,21 @@
+body{
+    margin: 0;
+    padding: 20px;
+    background: #111;
+    color: #eee;
+    font-family: sans-serif;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: 150px 1fr; /* 2 columns: fixed + flexible */
+    grid-template-rows: 80px auto\; /* 2 rows: fixed + flexible */
+}
+
+.item{
+    background: #444;
+    display: grid;
+    place-items: center;
+    border-radius: 6px;
+    font-weight: bold;
+}

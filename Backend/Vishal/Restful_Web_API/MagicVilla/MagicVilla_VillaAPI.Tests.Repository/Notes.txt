@@ -1,0 +1,15 @@
+﻿intro : this code is a unit test for the Repository class. It uses Moq to create mock objects for ApplicationDbContext and DbSet<SampleEntity>.
+The test method CreateAsync_AddEntity_To_DBSet verifies that when the CreateAsync method of the repository is called with a SampleEntity object,
+it adds the entity to the DbSet using the AddAsync method.
+
+//dbSetMock.Verify(x => x.AddAsync(entity, default), Times.Once);
+this line of code verifies that during the test execution, the AddAsync method of the mocked DbSet (dbSetMock) is called exactly once with the provided
+entity (entity) and default cancellation token (default). If it is not called exactly once, the test will fail. This ensures that the CreateAsync
+method of the repository correctly adds the entity to the DbSet.
+
+
+GetAllAsync_Returnsall()
+this test method sets up a mock DbSet containing a list of sample entities with predefined IDs. It then calls the GetAllAsync method of
+the repository with a predicate (entity => entity.Id > 0) to retrieve all entities where the ID is greater than 0. Finally,
+it asserts that the result obtained from GetAllAsync matches the expected list of entities. This ensures that the repository
+correctly retrieves all entities that meet the specified criteria.

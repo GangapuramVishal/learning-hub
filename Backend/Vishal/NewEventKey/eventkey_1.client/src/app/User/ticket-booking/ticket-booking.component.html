@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ticket Booking - EventKey</title>
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script async src="https://pay.google.com/gp/p/js/pay.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Marquee -->
+  <div class="marquee">
+    <span>🎉 Book your tickets now and experience the best events with EventKey! 🎉</span>
+  </div>
+
+  <!-- Ticket Booking Section -->
+  <div class="container">
+    <h2>🎟 Ticket Booking Form</h2>
+    <form (ngSubmit)="proceedToConfirm()">
+      <div class="form-group">
+        <label for="userName">User Name:</label>
+        <input type="text" id="userName" [value]="userName" readonly />
+      </div>
+
+      <div class="form-group">
+        <label for="eventName">Event Name:</label>
+        <input type="text" id="eventName" [value]="event.eventName" readonly />
+      </div>
+
+      <div class="form-group">
+        <label for="tickets">Number of Tickets:</label>
+        <input type="number" id="tickets" [(ngModel)]="numberOfTickets" name="tickets" (change)="updateTotalCost()" required min="1" [max]="event.maxAttendees" />
+      </div>
+
+      <div class="form-group">
+        <label for="baseCost">Base Cost:</label>
+        <input type="text" id="baseCost" [value]="baseCost | currency:'INR'" readonly />
+      </div>
+
+      <div class="form-group">
+        <label for="gstAmount">GST (18%):</label>
+        <input type="text" id="gstAmount" [value]="gstAmount | currency:'INR'" readonly />
+      </div>
+
+      <div class="form-group">
+        <label for="totalCost">Total Cost (Including GST):</label>
+        <input type="text" id="totalCost" [value]="totalCost | currency:'INR'" readonly />
+      </div>
+
+      <!-- Google Pay Button -->
+      <div id="googlePayContainer" class="mt-3">
+        <google-pay-button environment="TEST"
+                           buttonType="buy"
+                           buttonColor="black"
+                           [paymentRequest]="googlePayPaymentRequest"
+                           (loadpaymentdata)="onLoadPaymentData($event)">
+        </google-pay-button>
+      </div>
+
+      <div class="buttons mt-4">
+        <button type="button" (click)="cancelBooking()">Cancel</button>
+        <button type="submit">Proceed to Confirm</button>
+      </div>
+      <p style="padding-top:30px;">&copy; 2024 EventKey. Designed with ❤ by Initiators</p>
+    </form>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

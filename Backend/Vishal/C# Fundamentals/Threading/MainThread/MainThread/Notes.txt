@@ -1,0 +1,12 @@
+﻿Threading refers to the ability of a program to execute multiple tasks concurrently. Each thread represents a
+separate path of execution within a program. In C#, you can create and manage threads using the Thread class
+from the System.Threading namespace. 
+
+What is Thread?
+Generally, a Thread is a lightweight process. In simple words, we can say that a Thread is a unit of a process that is
+responsible for executing the application code. So, every program or application has some logic or code, and to execute
+that logic or code, Thread comes into the picture.
+
+>> every application by default contains one thread to execute the program and that is known as Main Thread, so every program is by default 
+single threaded model.
+>> 

@@ -1,0 +1,39 @@
+/* Base look */
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: system-ui, sans-serif;
+  background: #111;
+  color: #eee;
+}
+h2 { margin: 0 0 .5rem; }
+p  { margin: 0 0 1rem; }
+
+/* The layout using named areas */
+.layout {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header  header"
+    "sidebar main"
+    "footer  footer";
+}
+
+/* Map elements to the named areas */
+header { grid-area: header; }
+aside  { grid-area: sidebar; }
+main   { grid-area: main; }
+footer { grid-area: footer; }
+
+
+
+/* Just visuals */
+header, aside, main, footer {
+  background: #444;
+  border-radius: 8px;
+  padding: 16px;
+  font-weight: 600;
+  min-height: 80px;
+}

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pseudo-classes & Pseudo-elements — Simple Demo</title>
+  <link rel="stylesheet" href="PseudoClassesElements.css" />
+</head>
+<body>
+  <h1>Pseudo-classes & Pseudo-elements — Simple Demo</h1>
+
+  <!-- :hover -->
+  <section class="demo">
+    <h2>:hover</h2>
+    <p>Move your mouse over this link:</p>
+    <a class="demo-link" href="#!">Hover me</a>
+  </section>
+
+  <!-- :focus -->
+  <section class="demo">
+    <h2>:focus</h2>
+    <p>Click or press <kbd>Tab</kbd> to focus the input:</p>
+    <input class="demo-input" type="text" placeholder="Focus me" />
+  </section>
+
+  <!-- ::before -->
+  <section class="demo">
+    <h2>::before</h2>
+    <p class="note-before">This paragraph gets a decorative bar on the left using <code>::before</code>.</p>
+  </section>
+
+  <!-- ::after -->
+  <section class="demo">
+    <h2>::after</h2>
+    <button class="arrow-after">Read more</button>
+    <p style="margin-top:.5rem;">The arrow is injected with <code>::after</code> (no extra HTML inside the button).</p>
+  </section>
+</body>
+</html>

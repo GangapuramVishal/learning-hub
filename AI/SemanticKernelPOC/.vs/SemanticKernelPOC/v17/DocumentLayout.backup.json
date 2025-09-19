@@ -1,0 +1,169 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Learning\\AI\\SemanticKernelPOC\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B9F36F90-A7D8-46AA-BA11-3563ED96D51E}|SemanticKernelPOC.csproj|c:\\learning\\ai\\semantickernelpoc\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9F36F90-A7D8-46AA-BA11-3563ED96D51E}|SemanticKernelPOC.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9F36F90-A7D8-46AA-BA11-3563ED96D51E}|SemanticKernelPOC.csproj|c:\\learning\\ai\\semantickernelpoc\\plugins\\funfactsplugin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9F36F90-A7D8-46AA-BA11-3563ED96D51E}|SemanticKernelPOC.csproj|solutionrelative:plugins\\funfactsplugin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9F36F90-A7D8-46AA-BA11-3563ED96D51E}|SemanticKernelPOC.csproj|c:\\learning\\ai\\semantickernelpoc\\plugins\\timeplugin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9F36F90-A7D8-46AA-BA11-3563ED96D51E}|SemanticKernelPOC.csproj|solutionrelative:plugins\\timeplugin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9F36F90-A7D8-46AA-BA11-3563ED96D51E}|SemanticKernelPOC.csproj|c:\\learning\\ai\\semantickernelpoc\\plugins\\mathplugin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9F36F90-A7D8-46AA-BA11-3563ED96D51E}|SemanticKernelPOC.csproj|solutionrelative:plugins\\mathplugin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9F36F90-A7D8-46AA-BA11-3563ED96D51E}|SemanticKernelPOC.csproj|c:\\learning\\ai\\semantickernelpoc\\plugins\\weatherplugin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9F36F90-A7D8-46AA-BA11-3563ED96D51E}|SemanticKernelPOC.csproj|solutionrelative:plugins\\weatherplugin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9F36F90-A7D8-46AA-BA11-3563ED96D51E}|SemanticKernelPOC.csproj|c:\\learning\\ai\\semantickernelpoc\\controllers\\aicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9F36F90-A7D8-46AA-BA11-3563ED96D51E}|SemanticKernelPOC.csproj|solutionrelative:controllers\\aicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9F36F90-A7D8-46AA-BA11-3563ED96D51E}|SemanticKernelPOC.csproj|c:\\learning\\ai\\semantickernelpoc\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B9F36F90-A7D8-46AA-BA11-3563ED96D51E}|SemanticKernelPOC.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 223,
+          "SelectedChildIndex": 8,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FunFactsPlugin.cs",
+              "DocumentMoniker": "C:\\Learning\\AI\\SemanticKernelPOC\\Plugins\\FunFactsPlugin.cs",
+              "RelativeDocumentMoniker": "Plugins\\FunFactsPlugin.cs",
+              "ToolTip": "C:\\Learning\\AI\\SemanticKernelPOC\\Plugins\\FunFactsPlugin.cs",
+              "RelativeToolTip": "Plugins\\FunFactsPlugin.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwBoAAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-18T13:16:59.409Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TimePlugin.cs",
+              "DocumentMoniker": "C:\\Learning\\AI\\SemanticKernelPOC\\Plugins\\TimePlugin.cs",
+              "RelativeDocumentMoniker": "Plugins\\TimePlugin.cs",
+              "ToolTip": "C:\\Learning\\AI\\SemanticKernelPOC\\Plugins\\TimePlugin.cs",
+              "RelativeToolTip": "Plugins\\TimePlugin.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-18T13:16:59.13Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MathPlugin.cs",
+              "DocumentMoniker": "C:\\Learning\\AI\\SemanticKernelPOC\\Plugins\\MathPlugin.cs",
+              "RelativeDocumentMoniker": "Plugins\\MathPlugin.cs",
+              "ToolTip": "C:\\Learning\\AI\\SemanticKernelPOC\\Plugins\\MathPlugin.cs",
+              "RelativeToolTip": "Plugins\\MathPlugin.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-18T13:16:43.58Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "WeatherPlugin.cs",
+              "DocumentMoniker": "C:\\Learning\\AI\\SemanticKernelPOC\\Plugins\\WeatherPlugin.cs",
+              "RelativeDocumentMoniker": "Plugins\\WeatherPlugin.cs",
+              "ToolTip": "C:\\Learning\\AI\\SemanticKernelPOC\\Plugins\\WeatherPlugin.cs",
+              "RelativeToolTip": "Plugins\\WeatherPlugin.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-18T13:16:31.915Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AIController.cs",
+              "DocumentMoniker": "C:\\Learning\\AI\\SemanticKernelPOC\\Controllers\\AIController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AIController.cs",
+              "ToolTip": "C:\\Learning\\AI\\SemanticKernelPOC\\Controllers\\AIController.cs",
+              "RelativeToolTip": "Controllers\\AIController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-18T13:14:41.361Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Learning\\AI\\SemanticKernelPOC\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Learning\\AI\\SemanticKernelPOC\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADMAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-18T13:11:48.455Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Learning\\AI\\SemanticKernelPOC\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Learning\\AI\\SemanticKernelPOC\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-09-18T13:10:06.712Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 208,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

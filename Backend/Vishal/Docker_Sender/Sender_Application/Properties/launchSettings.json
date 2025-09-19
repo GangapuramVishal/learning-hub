@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Sender_Application": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}

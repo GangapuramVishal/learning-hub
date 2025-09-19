@@ -1,0 +1,20 @@
+Abstract Factory Design Pattern Overview
+The Abstract Factory design pattern is a creational design pattern that provides an interface for creating families of related or dependent objects without specifying their concrete classes. It allows the creation of objects that share a common theme but may have different implementations.
+
+Key Components
+Abstract Factory: Declares methods for creating abstract products.
+Concrete Factory: Implements the abstract factory methods to produce concrete products.
+Abstract Product: Declares the interface for a type of product.
+Concrete Product: Implements the abstract product interface.
+Client: Uses the abstract factory and abstract products, often unaware of the specific concrete implementations.
+
+
+Example: Furniture Factory
+Problem Domain
+We want to create furniture for different styles, each having a set of related products: Chair and Table. Each style has its own design for these products.
+
+Components
+Abstract Product: Chair and Table interfaces.
+Concrete Product: Victorian and Modern implementations of Chair and Table.
+Abstract Factory: FurnitureFactory interface to create the abstract products.
+Concrete Factory: VictorianFactory and ModernFactory to create concrete products.

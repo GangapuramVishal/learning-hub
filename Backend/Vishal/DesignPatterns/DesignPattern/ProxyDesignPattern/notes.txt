@@ -1,0 +1,65 @@
+﻿Proxy Design Pattern: A Detailed Explanation
+The Proxy Design Pattern is a structural design pattern that provides a surrogate or placeholder for another object to control access to it. 
+A proxy can act as an intermediary that manages access to the real subject, adding additional behavior without modifying the actual subject's code.
+
+Key Components
+Subject
+Defines a common interface that both the real object and the proxy implement.
+
+Real Subject
+The actual object that the proxy represents.
+
+Proxy
+Implements the same interface as the real subject and controls access to it. The proxy may handle additional functionality 
+such as lazy initialization, logging, caching, or access control.
+
+Real-World Examples
+Virtual Proxy
+A proxy object that creates and initializes a resource-intensive object only when it is actually needed.
+Example: A document viewer that loads high-resolution images only when they are scrolled into view.
+
+Remote Proxy
+Represents an object in a different address space, such as in distributed systems.
+Example: A client-side object that communicates with a remote server.
+
+Protection Proxy
+Controls access to the real subject based on user permissions.
+Example: A proxy that limits access to certain resources based on user roles.
+
+Smart Proxy
+Adds additional behavior such as logging, reference counting, or performance monitoring.
+Example: A proxy that logs the usage of specific objects.
+
+Advantages
+Decouples Code
+Keeps the real subject and client code separate while adding intermediary behavior.
+
+Lazy Initialization
+Saves memory and processing power by loading resources only when required.
+
+Controlled Access
+Enables fine-grained control over how clients interact with the subject.
+
+Security
+Adds layers of security by controlling or filtering requests.
+
+Disadvantages
+Increased Complexity
+Introduces an additional layer of abstraction, which can complicate code.
+
+Performance Overhead
+May reduce performance due to the added indirection.
+
+Explanation of Code ----
+
+IDatabase
+Defines the interface for the database operations that both RealDatabase and DatabaseProxy implement.
+
+RealDatabase
+Represents the actual database and contains the core logic to fetch sensitive data.
+
+DatabaseProxy
+Acts as an intermediary and implements access control by checking the user's role before allowing access to the RealDatabase.
+
+Client
+Simulates user interactions with the database. The client uses the proxy to fetch data without being aware of whether it is accessing the proxy or the real object.

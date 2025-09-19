@@ -1,0 +1,63 @@
+﻿Error Handling:
+
+>Error handling typically involves detecting and managing errors or exceptional conditions using return values or special codes.
+
+>It relies on predefined conventions or agreements about how errors are communicated between different parts of a program.
+
+>In error handling, you typically check for error conditions explicitly and handle them using conditional statements or other control flow mechanisms.
+
+>Error handling doesn't necessarily involve the use of exceptions. Instead, it might use special return values, status flags, or error codes to indicate and manage errors.
+
+Exception Handling:
+
+>Exception handling is a mechanism provided by the language to deal with exceptional conditions that occur during the execution of a program.
+
+>It allows you to handle errors or exceptional conditions in a structured and consistent way, separate from the normal flow of control.
+
+>Exceptions are objects that represent errors and are thrown when exceptional conditions arise.
+
+>Exception handling typically involves the use of try, catch, finally, and throw keywords to detect, handle, and propagate exceptions.
+>Exceptions provide a more structured and centralized approach to error handling compared to traditional error handling techniques.
+
+Key Difference:
+
+Error handling deals with managing errors or exceptional conditions using return values, status flags, or error codes, 
+and it's typically part of the regular program flow.
+
+Exception handling, on the other hand, is specifically designed to handle exceptional conditions using a separate mechanism 
+that allows for more structured error handling through the use of exceptions, without cluttering the regular program flow with error-checking logic.
+
+In summary, while error handling is a broader concept that encompasses various techniques for managing errors, exception handling is a specific mechanism 
+within C# that provides a more structured and centralized approach to dealing with exceptional conditions using exceptions.
+
+
+
+Exception Handling
+Exception handling is a programming practice that deals with unexpected situations or errors that occur during the execution of a program. When something goes wrong, like dividing by zero or trying to access a file that doesn't exist, the program can throw an exception. Exception handling allows you to "catch" these exceptions and take appropriate actions to either fix the problem or gracefully inform the user.
+
+Error Handling
+Error handling is a broader concept that encompasses exception handling. It includes all the ways a program can detect and respond to errors, not just exceptions. Error handling can involve checking for specific conditions (like whether a file exists before trying to open it) and dealing with errors that don’t necessarily result in exceptions.
+
+Differences Between Exception and Error
+Exception:
+
+Definition: An exception is a specific type of error condition that can be caught and handled in a program.
+Examples: Division by zero, null pointer access, out-of-bounds array access.
+Handling: Handled using try-catch blocks or equivalent constructs in different programming languages.
+Recoverable: Often considered recoverable, meaning the program can catch the exception and continue running.
+Error:
+
+Definition: An error is a broader term that includes exceptions but also covers other kinds of issues.
+Examples: Hardware failures, out of memory, logical errors in the code.
+Handling: Some errors (like logical errors or hardware failures) may not be easily handled or recovered from.
+Recoverable: Not always recoverable. Some errors can be so severe that the program cannot continue.
+Key Points
+Exceptions are a subset of errors: All exceptions are errors, but not all errors are exceptions.
+Handling Mechanism: Exceptions are usually handled with specific constructs like try-catch blocks. Other errors might be handled through conditional checks, logging, and fail-safe mechanisms.
+Severity: Errors can be more severe than exceptions. Exceptions are often things the programmer can anticipate and handle, while errors can be unexpected and more difficult to manage.
+
+
+Microsoft----
+How does exception handling relate to code development and testing? In fact, what does "exception handling" mean and is a developer expected to do it? In C# development, the errors that occur during the application runtime (versus build errors that occur during the build process) are referred to as exceptions, and "exception handling" is the process that a developer uses to manage those runtime exceptions within their code.
+
+You may be wondering how exception handling relates to code development and testing. In fact, what does "exception handling" mean and is a developer expected to do it? In C# development, the errors that occur while the application is running are referred to as exceptions. The term "exception handling" refers to the process that a developer uses to manage those runtime exceptions within their code. Errors that occur during the build process are referred to as errors, and aren't part of the exception handling process.

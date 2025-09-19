@@ -1,0 +1,60 @@
+﻿What is Caching?
+Caching is a method that stores the page output or application data between HTTP requests in memory so that
+future requests for the same piece of data or page are obtained from memory. It enhances application speed
+by allowing for quicker page rendering and fewer server resources. .NET developers can use caching to create
+scalable, high-performance apps.
+or
+In-memory caching is a common technique used to improve the performance of web applications. It involves storing frequently
+accessed data in memory so that it can be quickly retrieved without having to query a data store or perform expensive computations.
+
+A cache is a location usually present in the memory that facilitates high-speed data access. Caches store this
+subset of data to provide quick access to it and avoid accessing slower data stores for the same piece of data.
+
+What is In-Memory Caching?
+You can also take advantage of in-memory caching to improve the performance and scalability of an application.
+To leverage in-memory caching in ASP.NET 6, you should take advantage of the IMemoryCache interface.
+The IMemoryCache interface looks like this:
+
+public interface IMemoryCache : IDisposable
+{
+    bool TryGetValue(object key, out object value);
+    ICacheEntry CreateEntry(object key);
+    void Remove(object key);
+}
+
+You can add in-memory cache services to the request processing pipeline using the following code snippet in the Program.cs file in ASP.NET:
+
+services.AddMemoryCache();
+
+Once you have registered in-memory caching services with the built-in IoC container, you can use in-memory
+caching in your controllers as shown in the code snippet given below:
+
+[ApiController]
+[Route("[controller]")]
+public class MyController : ControllerBase
+{
+  private IMemoryCache cache;
+  public MyController(IMemoryCache cache)
+  {
+     this.cache = cache;
+  }
+}
+
+
+What is Distributed Caching?
+Distributed caching is a common way to cache data in a large, cloud-based application. It is useful when you need fast access
+to your data, but the volume of that data prevents it from being stored on one server.
+
+This type of caching stores duplicates of your data across multiple servers—that is, it creates replicas of your data across
+multiple servers. The replicas are stored in memory on each server (rather than being persisted to disk), which means they
+can be lost if the server crashes or restarts.
+
+A distributed cache increases performance because it reduces the number of requests sent over the network.
+
+In-Memory Cache: In-memory caching stores data directly within the application's memory space.
+It typically uses data structures like dictionaries or specialized caching libraries such as MemoryCache 
+in .NET. The cached data resides within the application process.
+
+Redis Cache: Redis is a standalone, in-memory data structure store that operates as a separate server.
+Applications interact with Redis over the network using client libraries. Cached data is stored in the Redis
+server's memory, which is independent of the application process.

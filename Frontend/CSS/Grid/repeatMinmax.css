@@ -1,0 +1,25 @@
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: sans-serif;
+  background: #111;
+  color: #eee;
+}
+
+/* 3 columns; each column is at least 160px wide,
+   otherwise it expands like 1fr (sharing leftover space). */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(160px, 1fr));
+  gap: 12px;
+}
+
+.item {
+  background: #444;
+  display: grid;
+  place-items: center;
+  border-radius: 6px;
+  font-weight: bold;
+  padding: 24px;
+  min-height: 80px;
+}

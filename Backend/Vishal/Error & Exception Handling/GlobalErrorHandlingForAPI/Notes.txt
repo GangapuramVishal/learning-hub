@@ -1,0 +1,65 @@
+﻿'Global Exception Handling in Asp.Net Core Web API can be done using IExceptionHandler. The IExceptionHandler interface in 
+asp.net core is a newly added concept and it is used to avoid try-catch from your asp.net core application 
+by handling the exceptions globally. 
+The IExceptionHandler interface in dotnet core can be used to handle the exceptions globally in all the 
+asp.net core frameworks like asp.net core web api, minimal apis, blazor, asp.net core mvc etc.'
+
+Global exception handling in C# is a technique used to handle exceptions at a higher level in your application, rather than
+handling them individually in each specific code block. Let me explain how it works and provide some examples.
+
+Global Error Handler Middleware (ASP.NET Core):
+
+In ASP.NET Core applications, you can implement a global exception handler using custom middleware. 
+This middleware catches all exceptions and determines which HTTP response code to return based on the exception type.
+
+Here are the main components involved:
+Global Error Handler Middleware: Custom middleware that catches all exceptions. It’s configured in the Program.cs
+file as part of the application’s request pipeline.
+
+App Exception: A custom exception class used to differentiate between handled exceptions (thrown by application code) 
+and unhandled exceptions (thrown by the .NET framework).
+
+Example Error Throwing Service: Demonstrates how to throw application-specific exceptions that will be handled by 
+the global error handler.
+
+The middleware responds with appropriate HTTP status codes:
+
+AppException: Custom application error (returns 400 Bad Request).
+KeyNotFoundException: Not found error (returns 404 Not Found).
+Other exceptions: Unhandled (returns 500 Internal Server Error).
+
+Middleware in ASP.NET Core plays a crucial role in processing HTTP requests and responses. 
+Let’s explore some common middleware components and their purposes:
+
+Authentication Middleware:
+Responsible for authenticating incoming HTTP requests.
+Example: app.UseAuthentication();
+
+Static Files Middleware:
+Handles serving static files (e.g., images, JavaScript, CSS) directly from the server.
+Example: app.UseStaticFiles();
+
+Routing Middleware:
+Routes incoming HTTP requests to appropriate endpoints (controllers/actions).
+Example: app.UseRouting();
+
+Session Middleware:
+Manages user sessions (state) across requests.
+Example: app.UseSession();
+
+Exception Handling Middleware:
+Catches unhandled exceptions during request processing.
+Example: app.UseExceptionHandler("/Error");
+
+CORS (Cross-Origin Resource Sharing) Middleware:
+Enables cross-origin requests (for APIs accessed from different domains).
+Example: app.UseCors();
+
+GZIP Compression Middleware:
+Compresses response content to reduce data transfer size.
+Example: (Custom implementation)
+
+
+Exception filter
+Middleware - by using this we can remove TC
+IExceptionHandler interface - to handle exception globally, this is applicable for entire application 

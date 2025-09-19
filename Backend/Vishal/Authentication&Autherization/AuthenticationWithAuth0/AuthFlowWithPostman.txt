@@ -1,0 +1,44 @@
+Domain : dev-xqiojx7qdkutjo4l.us.auth0.com
+
+ClientID : Tp8zAcHUGvGML57h8U51MirM9VfaCqeV
+
+Client Secret: iNGrV8_2eb6TUepLfOISAZh4u6HP45q2A4TPJERidxnPxrWR8hRAZ5ytovUMx62X
+
+
+
+eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkxfWVQ5Z2s0LXNIaXJfa2lNYnJaRiJ9.eyJpc3MiOiJodHRwczovL2Rldi14cWlvang3cWRrdXRqbzRsLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJUcDh6QWNIVUd2R01MNTdoOFU1MU1pck05VmZhQ3FlVkBjbGllbnRzIiwiYXVkIjoiaHR0cHM6Ly9teWFwaS8iLCJpYXQiOjE3MTY5MTk3MTgsImV4cCI6MTcxNzAwNjExOCwiZ3R5IjoiY2xpZW50LWNyZWRlbnRpYWxzIiwiYXpwIjoiVHA4ekFjSFVHdkdNTDU3aDhVNTFNaXJNOVZmYUNxZVYifQ.0wxThZzVXfKEwG0RzeTAw6ov9yBXfShYld-XNzZJWH0e_4wtJCE-Y8P9OtGxBmWmRsPaL64NU9XbIvjwWQoS3HQQjuWLr4A5VbtyQkkalat2Mf5VOzGknaEHOWXmdc3kOAyTLWoIeKkPTlobzm9JPf9eGPkwLP1jmH2hnus-WPNKRP1ZOqeU9O7u7bEprvXQWtyX_gA1nkEOx5RShM7fICKrnJJFsOGkZxyuj6Kk8c-revAEY5F7QgDBiiO52IEiiQiCZ03syHAZomum6onuyQWzLZr-qDPuvAfNFDdgITbs5bzVISepFxK3oYk6tXixWHtUSDpvVrd86ScQHOnblw
+
+
+
+  +-----------------+               +----------------+               +--------------+
+  | Postman         |               | Auth0          |               | ASP.NET Core |
+  +-----------------+               +----------------+               +--------------+
+           |                                |                               |
+           | 1. Create a Token Request      |                               |
+           |-------------------------------->|                               |
+           |                                |                               |
+           |                                | 2. Validate Client Credentials|
+           |                                |------------------------------>|
+           |                                |                               |
+           |                                |                               |
+           |                                | 3. Issue Access Token         |
+           |                                |<------------------------------|
+           |                                |                               |
+           | 4. Receive Access Token        |                               |
+           |<--------------------------------|                               |
+           |                                |                               |
+           | 5. Create API Request          |                               |
+           | with Access Token              |                               |
+           |-------------------------------->|                               |
+           |                                |                               |
+           |                                | 6. Validate Access Token      |
+           |                                |------------------------------>|
+           |                                |                               |
+           |                                | 7. Authorize Request          |
+           |                                |                               |
+           |                                | 8. Return Data                |
+           |                                |<------------------------------|
+           | 9. Receive API Response        |                               |
+           |<--------------------------------|                               |
+           |                                |                               |
+  +-----------------+               +----------------+               +--------------+

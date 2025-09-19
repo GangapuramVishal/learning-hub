@@ -1,0 +1,164 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Learning\\AI\\KernelUpdatedVersion\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2DEBC9A3-B337-447E-8B04-6DB4C5B73D0C}|KernelUpdatedVersion.csproj|c:\\learning\\ai\\kernelupdatedversion\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{2DEBC9A3-B337-447E-8B04-6DB4C5B73D0C}|KernelUpdatedVersion.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2DEBC9A3-B337-447E-8B04-6DB4C5B73D0C}|KernelUpdatedVersion.csproj|c:\\learning\\ai\\kernelupdatedversion\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2DEBC9A3-B337-447E-8B04-6DB4C5B73D0C}|KernelUpdatedVersion.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2DEBC9A3-B337-447E-8B04-6DB4C5B73D0C}|KernelUpdatedVersion.csproj|c:\\learning\\ai\\kernelupdatedversion\\plugins\\mathplugin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2DEBC9A3-B337-447E-8B04-6DB4C5B73D0C}|KernelUpdatedVersion.csproj|solutionrelative:plugins\\mathplugin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2DEBC9A3-B337-447E-8B04-6DB4C5B73D0C}|KernelUpdatedVersion.csproj|c:\\learning\\ai\\kernelupdatedversion\\plugins\\weatherplugin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2DEBC9A3-B337-447E-8B04-6DB4C5B73D0C}|KernelUpdatedVersion.csproj|solutionrelative:plugins\\weatherplugin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2DEBC9A3-B337-447E-8B04-6DB4C5B73D0C}|KernelUpdatedVersion.csproj|c:\\learning\\ai\\kernelupdatedversion\\plugins\\timeplugin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2DEBC9A3-B337-447E-8B04-6DB4C5B73D0C}|KernelUpdatedVersion.csproj|solutionrelative:plugins\\timeplugin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2DEBC9A3-B337-447E-8B04-6DB4C5B73D0C}|KernelUpdatedVersion.csproj|c:\\learning\\ai\\kernelupdatedversion\\plugins\\funfactsplugin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2DEBC9A3-B337-447E-8B04-6DB4C5B73D0C}|KernelUpdatedVersion.csproj|solutionrelative:plugins\\funfactsplugin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2DEBC9A3-B337-447E-8B04-6DB4C5B73D0C}|KernelUpdatedVersion.csproj|c:\\learning\\ai\\kernelupdatedversion\\controllers\\aicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2DEBC9A3-B337-447E-8B04-6DB4C5B73D0C}|KernelUpdatedVersion.csproj|solutionrelative:controllers\\aicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 223,
+          "SelectedChildIndex": 9,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TimePlugin.cs",
+              "DocumentMoniker": "C:\\Learning\\AI\\KernelUpdatedVersion\\Plugins\\TimePlugin.cs",
+              "RelativeDocumentMoniker": "Plugins\\TimePlugin.cs",
+              "ToolTip": "C:\\Learning\\AI\\KernelUpdatedVersion\\Plugins\\TimePlugin.cs",
+              "RelativeToolTip": "Plugins\\TimePlugin.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-18T14:19:18.476Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Learning\\AI\\KernelUpdatedVersion\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Learning\\AI\\KernelUpdatedVersion\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAmwBkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-18T14:16:56.383Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "WeatherPlugin.cs",
+              "DocumentMoniker": "C:\\Learning\\AI\\KernelUpdatedVersion\\Plugins\\WeatherPlugin.cs",
+              "RelativeDocumentMoniker": "Plugins\\WeatherPlugin.cs",
+              "ToolTip": "C:\\Learning\\AI\\KernelUpdatedVersion\\Plugins\\WeatherPlugin.cs",
+              "RelativeToolTip": "Plugins\\WeatherPlugin.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBoAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-18T14:19:23.239Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MathPlugin.cs",
+              "DocumentMoniker": "C:\\Learning\\AI\\KernelUpdatedVersion\\Plugins\\MathPlugin.cs",
+              "RelativeDocumentMoniker": "Plugins\\MathPlugin.cs",
+              "ToolTip": "C:\\Learning\\AI\\KernelUpdatedVersion\\Plugins\\MathPlugin.cs",
+              "RelativeToolTip": "Plugins\\MathPlugin.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAABSAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-18T14:19:13.459Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "FunFactsPlugin.cs",
+              "DocumentMoniker": "C:\\Learning\\AI\\KernelUpdatedVersion\\Plugins\\FunFactsPlugin.cs",
+              "RelativeDocumentMoniker": "Plugins\\FunFactsPlugin.cs",
+              "ToolTip": "C:\\Learning\\AI\\KernelUpdatedVersion\\Plugins\\FunFactsPlugin.cs",
+              "RelativeToolTip": "Plugins\\FunFactsPlugin.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwB4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-18T14:18:57.402Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AIController.cs",
+              "DocumentMoniker": "C:\\Learning\\AI\\KernelUpdatedVersion\\Controllers\\AIController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AIController.cs",
+              "ToolTip": "C:\\Learning\\AI\\KernelUpdatedVersion\\Controllers\\AIController.cs",
+              "RelativeToolTip": "Controllers\\AIController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-18T14:18:17.098Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Learning\\AI\\KernelUpdatedVersion\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Learning\\AI\\KernelUpdatedVersion\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-09-18T14:16:27.731Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 208,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+@SentinelOneAPIWithKernel_HostAddress = http://localhost:5289
+
+GET {{SentinelOneAPIWithKernel_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,88 @@
+1. Simple Calculator
+Project Description: Create a console-based calculator that can perform basic arithmetic operations: addition, subtraction, multiplication, and division. The program should prompt the user for two numbers and an operator, then display the result.
+
+Expected End Result: When run, the program should prompt the user to enter:
+
+A number (e.g., 10).
+An operator (+, -, *, or /).
+A second number (e.g., 5).
+The program will then calculate and display the result (e.g., "10 + 5 = 15").
+
+Tips:
+
+Use if-else statements or a switch statement to handle the operator input.
+Implement error handling to manage division by zero.
+Use methods for each operation (e.g., Add, Subtract) to make the code organized and reusable.
+
+======================================================================================================
+
+2. Number Guessing Game
+Project Description: Develop a number guessing game where the program generates a random number between 1 and 100, and the player has to guess the number. The program should tell the user whether their guess was too high, too low, or correct.
+
+Expected End Result: The game runs in the console and:
+
+Asks the user to guess the number.
+Provides feedback ("too high," "too low," or "correct") after each guess.
+Ends when the user guesses the number and displays the number of attempts taken.
+Tips:
+
+Use Random to generate a random number.
+Use a while loop to keep the game running until the player guesses correctly.
+Keep track of the number of attempts to give the user feedback on their performance.
+
+=======================================================================================================
+
+3. Basic To-Do List
+Project Description: Create a console-based to-do list application where the user can add tasks, mark tasks as completed, and view all tasks. Implement a simple menu for user navigation.
+
+Expected End Result: The program will offer options:
+
+Add a new task.
+Mark a task as completed.
+View all tasks.
+When viewing tasks, completed ones should be marked as such. Users can add multiple tasks, and each task’s status should be updated as completed when chosen.
+
+Tips:
+
+Use a List<string> to store the tasks.
+Optionally, create a Task class to include properties like Description and IsCompleted.
+Use a do-while or while loop to keep showing the menu until the user decides to exit.
+
+=======================================================================================================
+
+4. Temperature Converter
+Project Description: Develop a temperature converter that allows the user to convert temperatures between Celsius, Fahrenheit, and Kelvin. The program should ask the user which conversion they’d like to perform and then display the converted temperature.
+
+Expected End Result: The program will:
+
+Ask the user for the original temperature unit and value.
+Ask for the target temperature unit.
+Display the converted result.
+Example: If the user enters 32 degrees Fahrenheit and selects Celsius, the program should output "32°F is 0°C."
+
+Tips:
+
+Create methods for each conversion (e.g., FahrenheitToCelsius, CelsiusToKelvin).
+Use if-else statements or a switch statement to handle different conversion types.
+Remember the formulas:
+Celsius to Fahrenheit: (°C * 9/5) + 32
+Fahrenheit to Celsius: (°F - 32) * 5/9
+Celsius to Kelvin: °C + 273.15
+
+===============================================================================================================
+
+5. Simple Bank Account Simulation
+Project Description: Build a simple bank account simulation that allows users to create an account, deposit funds, withdraw funds, and check their balance. For simplicity, implement a single account with a starting balance.
+
+Expected End Result: The program should offer the following options:
+
+Check balance.
+Deposit money.
+Withdraw money.
+Example: When the user selects "Check balance," the program displays their current balance.
+
+Tips:
+
+Create a BankAccount class with properties for Balance and methods for Deposit, Withdraw, and CheckBalance.
+Use conditional statements to check for invalid transactions (e.g., withdrawing more than the current balance).
+Keep track of the balance with a private field and update it through the methods.

@@ -1,0 +1,16 @@
+﻿namespace TalentTrack_BLL.Dtos
+{
+    public class UserDto
+    {
+        public int UserID { get; set; }
+        public string EmployeeID { get; set; }
+        public string Name { get; set; }
+        public string Email { get; set; }
+        public int PhoneNo { get; set; }
+        public string? PersonalEmail { get; set; }
+        public string Designation { get; set; }
+        public int? ManagerID { get; set; }
+        public int ExperienceYears { get; set; }
+        public string AvailabilityStatus { get; set; }
+    }
+}

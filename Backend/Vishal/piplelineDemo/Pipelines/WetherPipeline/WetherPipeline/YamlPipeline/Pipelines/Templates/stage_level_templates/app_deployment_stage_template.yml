@@ -1,0 +1,45 @@
+parameters:
+  - name: environment
+    type: string
+    values:
+      - dev
+      - test
+      # - prd
+  - name: serviceConnection
+    type: string
+  - name: subscriptionId
+    type: string
+  - name: appType
+    type: string
+  - name: condition
+    type: string
+    default: 'true'
+
+stages:
+- stage: AppDeploy${{parameters.environment}}
+  displayName: '${{parameters.environment}}: app deployment'
+  condition: ${{ parameters.condition }}       
+
+  jobs:
+    - deployment: DeployApp
+      displayName: DeployApp
+      environment: ${{parameters.environment}}
+      pool:
+       vmImage: 'windows-latest'
+      strategy:
+        runOnce:
+          deploy:
+            steps:
+              - download: current
+                artifact: drop
+                patterns: '**/*'
+              - task: AzureRmWebAppDeployment@4
+                displayName: 'Deploy : app-${{parameters.environment}}-as'
+                inputs:
+                  azureSubscription:  ${{parameters.serviceConnection}}
+                  WebAppName: 'coreweatherforecast-dev-as'
+                  Package: '$(Pipeline.Workspace)/drop/**.zip'
+                  enableCustomDeployment: true
+                  DeploymentType: zipDeploy 
+                  RemoveAdditionalFilesFlag: true
+                  appType: ${{parameters.appType}}   

@@ -1,0 +1,6 @@
+@TeamAdi_HostAddress = http://localhost:5041
+
+GET {{TeamAdi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
